@@ -1,0 +1,4 @@
+<Object Runat="Server" Scope="application" ID="dDataCache" 
+ProgID="Scripting.Dictionary"></Object>
+<Object Runat="Server" Scope="application" ID="ddDataCache" 
+ProgID="Scripting.Dictionary"></Object>

@@ -1,0 +1,348 @@
+
+/* ::: | SKYPORTAL.NET(c)Dogg Software | Frosted | ::: */
+/* ::: | This Stylesheet Modified by Rick Frost {Frost} | ::: */ 
+/* ::: | QnA: Find me at Skyportal.net - Frozenwinds.com ::: */
+
+/* Click-Menu Css */
+.mnuContainer {
+ margin: 0px;
+ padding: 0px;
+ border: 0px;
+ background-color: transparent;
+}
+.mnuHead {
+ white-space: nowrap;
+ margin: 1px;
+ padding-top: 2px;
+ padding-right: 3px;
+ padding-bottom: 4px;
+ padding-left: 3px;
+ font-size: 10px; font-weight: bold; color: #0056a8; text-decoration: none;  
+ border: 1px outset #ffffff; 
+ background-image: url(menu-1.jpg);
+ background-repeat: repeat-x;
+ background-position: center bottom;  
+ background-color: #dfe6e9;
+}
+.mnuHeadHover {
+ white-space: nowrap;
+ margin: 1px;
+ padding-top: 2px;
+ padding-right: 3px;
+ padding-bottom: 4px;
+ padding-left: 3px;
+ border: 1px inset #ffffff;
+ font-size: 10px; font-weight: bold; color: #003160; text-decoration: none;
+ background-image: url(menu-2.jpg);
+ background-repeat: repeat-x;
+ background-position: center top;  
+ background-color: #dfe6e9;
+}
+div.mnuChild {
+ width: 100%;
+ white-space: nowrap;
+ margin: 1px;
+ padding-top: 2px;
+ padding-right: 0px;
+ padding-bottom: 3px;
+ padding-left: 0px;
+ font-size: 10px; font-weight: bold; color: #003160; text-decoration: none;
+ border: 1px outset #ffffff;
+ background-color: #bfdaf5;
+}
+div.mnuChildHover,div.menuButtonActive,div.menuButtonActive:hover {
+ width: 100%;
+ white-space: nowrap;
+ margin: 1px;
+ padding-top: 2px;
+ padding-right: 0px;
+ padding-bottom: 3px;
+ padding-left: 0px;
+ border: 1px inset #ffffff;
+ font-size: 10px; font-weight: bold; color: #263646; text-decoration: none;
+ background-color: #ececec;
+}
+/* End Click-Menu Css */
+
+/* Start Basic Menu Css */
+div.menu {
+ width: 160px;
+ margin: 0px;
+ padding: 0px;
+ border: 0px;
+ text-align: left;   
+}
+div.menu a:link, 
+div.menu a:visited,
+div.menu a:active,
+div.menu h4 a:link,
+div.menu h4 a:visited,
+div.menu h4 a:active {
+ display:block;
+ width: 100%;  
+ padding: 2px; 
+ margin: 2px;
+ font-size: 10px; font-weight: bold; color: #0056a8; text-decoration: none;
+ border: 1px outset #ffffff; 
+ background-image: url(menu-1.jpg);
+ background-repeat: repeat-x;
+ background-position: center bottom;  
+ background-color: #dfe6e9;
+}
+div.menu h4 {
+ padding: 2px; 
+ margin: 2px;
+ text-align: left;
+ font-size: 10px; font-weight: normal; 
+ border: 1px outset #ffffff; 
+ background-image: url(menu-1.jpg);
+ background-repeat: repeat-x;
+ background-position: center bottom;  
+ background-color: #dfe6e9; 
+}
+div.menu a:hover,
+div.menu h4 a:hover {   
+ cursor: pointer;
+ padding: 2px; 
+ margin: 2px;
+ border: 1px inset #ffffff; 
+ font-weight: bold; font-size: 10px; color:#003160;
+ background-image: url(menu-2.jpg);
+ background-repeat: repeat-x;
+ background-position: center top;  
+ background-color: #dfe6e9;
+}
+
+html>body div.menu a { width: auto; color: #0056a8; }
+html>body div.menu a:visited { width: auto; color: #112A40; }
+html>body div.menu h4 a { width: auto; color: #0056a8; }
+html>body div.menu h4 a:active { width: auto;color: #000000; }
+html>body div.menu h4 a:visited { width: auto;color: #003160; }
+/* End Basic Menu Css  */
+
+/* Start Navbar Menu Styles */
+div.menuBar,
+div.menuBar a.menuButton,
+div.nav_menu,
+div.nav_menu a.nav_menuItem { 
+font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; font-style: normal; font-weight: bold; color: #000000; white-space: nowrap;  
+}
+div.menuBar {
+ padding-top: 7px;
+ padding-right: 2px;
+ padding-bottom: 5px;
+ padding-left: 2px; 
+ border: 0px;
+ text-align: left;
+}
+div.menuBar a.menuButton, div.menuBar a.menuButton:visited {
+ cursor: pointer;
+ left: 0px;
+ position: relative;
+ top: 0px;
+ z-index: 20; 
+ margin: 0px;
+ padding: 3px 8px 3px 8px; 
+ border-right: 1px solid #ffffff;
+ border-left: 1px solid #668faf;
+ font-size: 12px; text-decoration: none; color: #0000FF;  
+}
+div.menuBar a.menuButton:hover {  
+ left: 0px;
+ top: 0px;
+ margin: 0px; 
+ font-size: 12px; color: #000000;   
+}
+div.menuBar a.menuButtonActive,
+div.menuBar a.menuButtonActive:hover {
+ left: 0px;
+ top: 0px; 
+ margin: 0px; 
+ font-size: 12px; color: #000000;  
+ /* border: 1px inset #ffffff;   
+ border: 0px inset #ffffff; 
+ background-image: url(menu-2.jpg);
+ background-repeat: repeat-x;
+ background-position: center top;  
+ background-color: #dfe6e9; */   
+}
+div.nav_menu {
+ background-image: url(MenuBg.jpg);
+ background-repeat: repeat-y;
+ background-position: center top;  
+ position: absolute;
+ visibility: hidden;
+ z-index: 20; 
+ left: 0px;    
+ margin-top: -2px;
+ padding: 1px;
+ text-align:center; 
+ border: 1px solid #668faf;
+ background-color: #acc0d3;
+}
+div.nav_menu a.nav_menuItem, div.nav_menu a.nav_menuItem:visited {
+ display: block; 
+ cursor: pointer; 
+ white-space: nowrap;
+ margin: 1px;
+ font-size: 12px; font-weight: bold; color: #063350; text-decoration: none;
+ text-align:left;
+ padding-top: 5px;
+ padding-right: 10px;
+ padding-bottom: 5px;
+ padding-left: 10px;
+ border: 1px outset #ffffff;
+ white-space: nowrap;
+ background-image: url(menu-1.jpg);
+ background-repeat: repeat-x;
+ background-position: center bottom;  
+ background-color: #dfe6e9; 
+}
+div.nav_menu a.nav_menuItem:hover, div.nav_menu a.menuItemHighlight { 
+ font-size: 12px; color: #003efa;
+ background-image: url(menu-2.jpg);
+ background-repeat: repeat-x;
+ background-position: center top;  
+ background-color: #dfe6e9; 
+ border: 1px outset #ffffff;
+}
+div.nav_menu a.nav_menuItem span.menuItemText {}
+div.nav_menu a.nav_menuItem span.menuItemArrow { margin-right: -.75em; }
+div.nav_menu div.menuItemSep { margin: 1px 1px; border: 1px solid #879eb5; font-size: 10px; color:#112A40; }
+/* End NavBar Menu Styles */
+
+/* VERT Navbar Menu Styles */
+div.menuBarV {
+ margin: 2px;
+ padding: 2px;
+ text-align: center; 
+ background-color: transparent;   
+}
+div.menuBarV a.menuButtonV, div.menuBarV a.menuButtonV:visited {
+ display:block;
+ cursor: pointer;
+ left: 0px;
+ top: 0px;
+ width: 161px;
+ margin: 1px;
+ padding: 3px;
+ font-size: 10px; font-weight: bold; color: #0a354d; text-decoration: none;
+ text-align:left;
+ border: 1px outset #ffffff;
+ background-image: url(menu-1.jpg);
+ background-repeat: repeat-x;
+ background-position: center bottom;  
+ background-color: #dfe6e9;
+}
+div.menuBarV a.menuButtonV:hover {
+ margin: 1px;  
+ left: 0px;
+ top: 0px;
+ border: 1px inset #ffffff;
+ font-size: 10px; font-weight: bold; color: #001927; text-decoration: none;
+ background-image: url(menu-2.jpg);
+ background-repeat: repeat-x;
+ background-position: center top;  
+ background-color: #dfe6e9;
+}
+div.menuBarV a.menuButtonActive,
+div.menuBarV a.menuButtonActive:hover {
+ margin: 0px; 
+ left: 0px;
+ top: 0px; 
+ font-size: 10px; color: #0a354d;  
+ border: 1px inset #ffffff;  
+ background-image: url(menu-2.jpg);
+ background-repeat: repeat-x;
+ background-position: center top;  
+ background-color: #dfe6e9; 
+}
+div.vfly_menu {
+ left: 0px;  
+ position: absolute;
+ visibility: hidden;
+ z-index: 101; 
+ margin-top: -2px; 
+ padding: 2px;   
+ border: 1px outset #ffffff;
+ background-image: url(MenuBg.jpg);
+ background-repeat: repeat-y;
+ background-position: center top; 
+ background-color: #acc0d3;
+}
+div.vfly_menu a.vfly_menuItem, div.vfly_menu a.vfly_menuItem:visited {
+ display: block; 
+ cursor: pointer;
+ white-space: nowrap;
+ margin: 2px;
+ padding-top: 4px;
+ padding-right: 10px;
+ padding-bottom: 5px;
+ padding-left: 5px; 
+ font-size: 10px; font-weight: bold; color: #0a354d; text-decoration: none;
+ text-align:left;
+ border: 1px outset #ffffff;
+ background-image: url(menu-1.jpg);
+ background-repeat: repeat-x;
+ background-position: center bottom; 
+ background-color: #dfe6e9;
+}
+div.vfly_menu a.vfly_menuItem:hover, div.vfly_menu a.menuItemHighlight { 
+ margin: 2px;
+ padding-top: 4px;
+ padding-right: 10px;
+ padding-bottom: 5px;
+ padding-left: 5px;
+ border: 1px inset #ffffff;
+ font-size: 10px; font-weight: bold; color: #001927; text-decoration: none;
+ background-image: url(menu-2.jpg);
+ background-repeat: repeat-x;
+ background-position: center top; 
+ background-color: #dfe6e9;
+}
+
+div.vfly_menu a.vfly_menuItem span.menuItemText {}
+div.vfly_menu a.vfly_menuItem span.menuItemArrow { margin-right: -.75em; }
+div.vfly_menu a.menuButtonV span.menuItemArrow { margin-top: 15px; display:inline; vertical-align: middle; z-index: 100; }
+div.vfly_menu div.menuItemSep {
+ margin: 1px;
+ height: 5px;
+ border: 1px solid #879eb5;
+ font-size: 10px; color:#0a354d;
+}
+/* End VERT Navbar Menu Styles */
+
+/* TABS Styles */
+.tabframe { border: 1px solid #a0b6cb; background-color: #bfdaf5; }
+#tablist {
+ margin-left: 0;
+ margin-bottom: 0;
+ margin-top: 0.1em;
+ padding: 3px 0;
+}
+#tablist li { 
+ list-style: none; display: inline; margin: 0px; 
+ font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; font-style: normal; font-weight: bold; color: #ffffff; font-style: normal; font-variant: small-caps; text-decoration: none;
+}
+#tablist li a {
+ margin-left: 3px;
+ padding: 3px 0.5em;
+ border: 1px outset #ffffff;
+ color: #ffffff; text-decoration: none; 
+ background-color: #7b9dbb;
+}
+#tablist li a.current, #tablist li a.current:visited {
+ letter-spacing: 1px;
+ color: #000000; text-decoration: none;
+ background-color: #a0b6cb;
+}
+#tablist li a:link, #tablist li a:visited {
+ letter-spacing: 1px;
+ color: #ffffff;
+}
+#tablist li a:hover {
+ letter-spacing: 1px;
+ border: 1px inset #ffffff;
+ color: #000000; text-decoration: none; 
+ background-color: #d7dde0;
+}

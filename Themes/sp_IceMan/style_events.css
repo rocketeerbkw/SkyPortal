@@ -1,0 +1,253 @@
+
+/* ::: | SKYPORTAL.NET(c)Dogg Software | ::: */
+
+/* -- START EVENT/CALENDAR STYLES -- */
+div.calNavButtonBar1 {
+	padding:1px;
+	width:100%;
+	height:30px;
+	border: 1px solid #81A9E2;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#C6E6FF', EndColorStr='#50A8DB');
+	background-color:#A5DDFF;
+}
+div.calNavButton1 {
+	cursor:pointer;
+	color: #FFFFFF;
+	width: 32px;
+	height:27px;
+	padding:2px;
+	background-color: #A5DDFF;
+	border: 0px solid #A5DDFF;
+	text-align: center;
+	vertical-align: middle;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#C6E6FF', EndColorStr='#50A8DB');
+	/*
+	border: 0px solid #E6F4FF;
+	padding:1px;
+	*/
+}
+div.calNavButtonOver1 {
+	border: 1px solid #0075B8;
+	background-color: #C69BBB;
+	cursor:pointer;
+	width: 32px;
+	height:27px;
+	padding:1px;
+	text-align: center;
+	vertical-align: middle;
+}
+div.calNavButtonBar2 {
+	padding:1px;
+	width:100%;
+	border: 1px solid #81A9E2;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#C6E6FF', EndColorStr='#50A8DB');
+	background-color:#A5DDFF;
+}
+div.calNavButton2 {
+	cursor:pointer;
+	color: #FFFFFF;
+	width: 44px;
+	height:34px;
+	padding:2px;
+	background-color: #A5DDFF;
+	border: 0px solid #A5DDFF;
+	text-align: center;
+	vertical-align: middle;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#C6E6FF', EndColorStr='#50A8DB');
+	/*
+	border: 0px solid #E6F4FF;
+	padding:1px;
+	*/
+}
+div.calNavButtonOver2 {
+	border: 1px solid #0075B8;
+	background-color: #C69BBB;
+	cursor:pointer;
+	width: 44px;
+	height:34px;
+	padding:1px;
+	text-align: center;
+	vertical-align: middle;
+}
+.calNavSeperator {
+	border: 1px solid #0075B8;
+	width: 1px;
+	margin:0;
+	padding:0;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#C6E6FF', EndColorStr='#50A8DB');
+}
+.calNavSeperator hr {
+	width: 2px;
+	height:4px;
+	margin:0;
+	padding:0;
+	background-color:#073B96;
+	text-align: center;
+	vertical-align: middle;
+}
+.calNavHeader {
+	background-color:#A5DDFF;
+	height:25px;
+	border: 1px solid #81A9E2;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#C6E6FF', EndColorStr='#50A8DB');
+}
+TD.WeekDayHeader 
+{
+	font-family :Verdana, Arial, Helvetica, sans-serif;
+	font-size :11px; 
+	color :#000000; 
+	background-color :#F1F1F4; 
+	font-weight :normal;
+}
+.monthDayHeader
+{
+	background-color :#50A8DB;
+	padding-top:2px;
+	padding-bottom:2px;
+	padding-left:3px;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#C6E6FF', EndColorStr='#50A8DB');
+}
+
+.calSmall{
+  font-family :Verdana, Arial Narrow, Helvetica, sans-serif;
+  font-size :9px;
+  padding:1px;
+  
+}
+
+TD.Day 
+{
+	font-family :Verdana, Arial, Helvetica, sans-serif;
+	font-size :11px; 
+	color :#000000; 
+	background-color :#F1F1F4; 
+	font-weight :normal;
+}
+TD.NON2 
+{
+	cursor: crosshair;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size :11px; 
+	background-color :lightgrey; 
+	font-weight :normal;
+}
+TD.Today 
+{
+	font-family :Verdana, Arial, Helvetica, sans-serif;
+	font-size :11px; 
+	background-color :lightsteelblue; 
+	font-weight :normal;
+}
+TD.HL 
+{
+	font-family :Verdana, Arial, Helvetica, sans-serif;
+	font-size :11px; 
+	color :#D9DEE2; 
+	font-weight :normal;
+}
+A.NOEVENT:link, A.NOEVENT:visited
+{
+    color: #000000;
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    TEXT-DECORATION: none;
+    FONT-WEIGHT: normal;
+}
+A.NOEVENT:hover
+{
+    color: #000000;
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    TEXT-DECORATION: none;
+    FONT-WEIGHT: normal;
+}
+A.EVENT:link, A.EVENT:visited
+{
+    COLOR: navy;
+    CURSOR: pointer;
+    FONT-FAMILY: Arial, Verdana, Helvetica, sans-serif;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none;
+}
+A.EVENT:hover
+{
+    BACKGROUND-COLOR: CCFFFF;
+    COLOR: navy;
+    CURSOR: help;
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none;
+}
+TD.Some 
+{
+	font-family :Verdana, Arial, Helvetica, sans-serif;
+	font-size :11px; 
+	color :#D9DEE2; 
+	font-weight :bold;
+	background-color :#EFF8FF; 
+	}
+TD.Selected 
+{
+	font-family :Verdana, Arial, Helvetica, sans-serif;
+	font-size :11px; 
+	background-color :plum; 
+	font-weight :normal;
+}
+
+/*  still looning for the classes below  */
+
+TD.NON 
+{
+	font-family :Verdana, Arial, Helvetica, sans-serif;
+	font-size :11px; 
+	color :#C0C0C0; 
+	font-weight :normal;
+}
+TD.TOP 
+{
+	font-family :Verdana, Arial, Helvetica, sans-serif;
+	font-size :11px; 
+	color :#0000FF; 
+	font-weight :bold;
+}
+
+A.MONTH:link, A.MONTH:visited
+{
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    FONT-WEIGHT: normal;
+    TEXT-DECORATION: none;
+}
+A.MONTH:hover
+{
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    FONT-WEIGHT: normal;
+    TEXT-DECORATION: underline;
+}
+A.NORMAL:link, A.NORMAL:visited
+{
+    color: #05719F;
+    FONT-FAMILY: Verdana, Arial;
+    FONT-WEIGHT: normal;
+    TEXT-DECORATION: none;
+}
+
+A.NORMAL:hover
+{
+    color: #05719F;
+    FONT-FAMILY: Verdana, Arial;
+    FONT-WEIGHT: normal;
+    TEXT-DECORATION: none;
+}
+.month
+{
+	background-color :#50A8DB; 
+}
+.eventname
+{
+    FONT-WEIGHT: bold;
+}
+/* 
+a.Title:link {color:navy; text-decoration: underline; cursor: pointer}
+a.Title:visited {color: steelblue; text-decoration: underline}
+a.Title:hover   {color: FFFFCC; text-decoration: underline; cursor: pointer}
+-- END EVENT/CALENDAR STYLES -- */

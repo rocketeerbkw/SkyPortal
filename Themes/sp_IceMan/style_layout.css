@@ -1,0 +1,78 @@
+
+/* ::: | SKYPORTAL.NET(c)Dogg Software | Frosted | ::: */
+/* ::: | This Stylesheet Modified by Rick Frost {Frost} | ::: */ 
+/* ::: | QnA: Find me at Skyportal.net - Frozenwinds.com ::: */ 
+
+.spPageContainer {
+ vertical-align: top;
+ margin-left: auto;
+ margin-right: auto;  
+ padding: 0px; 
+ border: 0px;  
+ width: 100%;
+ background-color: transparent; 
+}
+
+.spPageLeft { display: none; }
+.spPageRight { display: none; }
+
+.spTheme { 
+ width: 100%; 
+ height: 100%;
+ margin: 0px;
+ padding: 0px; 
+ text-align: center;
+ background-color: transparent; 
+} 
+.spThemePage { 
+ width: 100%;
+ margin: 0px;
+ padding: 0px;  
+ text-align: center;
+ border: 0px;  
+ background-color: transparent; 
+} 
+
+.leftPgCol {
+ display: table-cell;
+ vertical-align: top;
+ width: 200px;    
+ margin: 2px;   
+ padding: 4px 2px 4px 2px; 
+ background-image: url(LColBg.jpg);
+ background-repeat: repeat-y;
+ background-position: left top; 
+ border-right: 1px solid #5e84a2;   
+ background-color: #a9bfd6;
+}
+.mainPgCol {
+ display: table-cell; 
+ vertical-align: top; 
+ margin: 0px; 
+ padding: 4px 0px 4px 6px;
+ border-left: 0px outset #B5CBD0;
+ border-right: 0px inset #B5CBD0; 
+ background-color: transparent; 
+}
+.rightPgCol {
+ display: table-cell; 
+ vertical-align: top; 
+ width: 190px;   
+ margin: 2px;
+ padding: 4px 2px 4px 2px;   
+ background-color: transparent;  
+}
+
+.breadcrumb { 
+ width: 98%;
+ vertical-align: middle;  
+ margin-top: 5px; 
+ margin-bottom: 6px; 
+ margin-left: 5px; 
+ margin-right: 5px;
+ padding: 2px;   
+ border-top: 1px dashed #112A40;
+ border-bottom: 1px dashed #112A40;
+ font-weight: bold; color: #006397;
+ background-color: transparent; 	      
+} 

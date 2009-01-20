@@ -1,0 +1,319 @@
+@import url("style_layout.css");
+@import url("style_window.css");
+@import url("style_blocks.css");
+@import url("style_menus.css");
+@import url("style_events.css");
+
+/* ::: | SKYPORTAL.NET(c)Dogg Software | Frosted | ::: */
+/* ::: | This Stylesheet Modified by Rick Frost {Frost} | ::: */ 
+/* ::: | QnA: Find me at Skyportal.net - Frozenwinds.com ::: */ 
+
+BODY {
+ scrollbar-base-color: #b0c5d6; 
+ vertical-align: top;
+ margin: 0px;
+ padding: 0px;  
+ background-image: url(IceMan-Pro.jpg);
+ background-repeat: repeat-x;
+ background-position: left top; 
+ background-color: #dfebf5; 
+ font-size: 11px; font-family: Verdana, Arial, sans-serif; color: #112A40; font-weight: bold;
+ text-align: center; 
+}
+
+A:link { color: #0000ff; text-decoration: none; font-weight: bold; }
+A:visited { color: #000000; text-decoration: none; font-weight: bold; }
+A:hover	{ color: #FF0000; text-decoration: none; font-weight: bold; }
+A:active { color: #00ff00; text-decoration: none; font-weight: bold; }
+
+/* PAGE ELEMENTS */
+fieldset { color: #112A40; border: 1px solid #084267; }
+legend { font-size: 11px; color: #084267; } 
+HR { color: #73888D; height: 1px; width:98%; }
+form { margin: 0px; }
+
+textarea {
+ border: 1px solid #000000;
+ font-family: Verdana, Arial, sans-serif; font-size: 11px; color: #000000;
+ background-color: #ececec;  
+}
+select {
+ font-family: Verdana, Arial, sans-serif; font-size: 11px; color: #000000;
+ border: 1px solid #A8B2BB;
+ background-color: #ececec;  
+}
+.textbox {
+ padding-left: 2px;  
+ border: 1px solid #000000;
+ font-family: Verdana, Arial, sans-serif; font-size: 11px; color: #000000;
+ background-color: #ececec; 
+}
+
+/* Image Login/Logout Buttons */
+.imgLogout {
+ height: 22px;
+ width: 67px;
+ margin: 0px;
+ padding: 0px;
+ border: 0px; 
+ background-image: url(logout.gif);
+ background-repeat: no-repeat;
+ background-position: left top;  
+}
+.imgLogin {
+ height: 20px;
+ width: 59px;
+ margin: 0px;
+ padding: 0px;
+ border: 0px; 
+ background-image: url(login.gif);
+ background-repeat: no-repeat;
+ background-position: left top;  
+}
+.btnLogin { 
+ height: 16px;
+ cursor: pointer;
+ white-space: nowrap;
+ text-align: center;
+ vertical-align: middle;
+ letter-spacing: .2em; 
+ margin-top: 4px;
+ margin-bottom: 4px;
+ margin-right: 4px;
+ margin-left: 4px;
+ padding-left: 2px;
+ padding-right: 2px;
+ padding-top: 0px;
+ padding-bottom: 2px;
+ border: 1px solid #05719F;
+ font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9px; font-weight: bold; color: #05719F;
+ background-image: url(BTile.jpg);
+ background-repeat: repeat-x;
+ background-position: left top;  
+ background-color: #EFF8FF;  
+}
+/* END Image Login/Logout Buttons */
+
+.button {
+ background-image: url(BTile.jpg);
+ background-repeat: repeat-x;
+ background-position: left top; 
+ height: 20px;
+ margin-top: 5px;
+ margin-bottom: 5px;
+ padding: 0px;
+ cursor: pointer;
+ white-space: nowrap;
+ text-align: center;
+ vertical-align: middle;
+ border: 1px solid #05719F;
+ font-size: 11px; font-weight: bold; color: #05719F;
+ letter-spacing: .2em;
+ background-color: #EFF8FF;  
+}
+.Title { font-weight: bold; font-size: 12px; color: #cc3300; }
+.Code {
+ display: block;
+ width: 80%;
+ margin-top: 5px;
+ margin-right: 10px;
+ margin-bottom: 5px;
+ margin-left: 10px;
+ padding-right: 5px;
+ padding-left: 10px;
+ font-family: 'Courier New', Monospace; font-size: 11px; color: #000000;
+ border-top: 5px solid #003366;
+ border-right: 1px solid #003366;
+ border-bottom: 1px solid #003366;
+ border-left: 5px solid #003366;
+ background-color: #ececec;
+}
+.Quote {
+ display: block;
+ width: 80%;
+ margin-top: 5px;
+ margin-right: 10px;
+ margin-bottom: 5px;
+ margin-left: 10px;
+ padding-right: 5px;
+ padding-left: 10px;
+ padding-top: 5px;
+ padding-bottom: 5px;
+ font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; color: #000000; 
+ border-top: 2px solid #003366;
+ border-right: 0px solid #8b4513;
+ border-bottom: 2px solid #003366;
+ border-left: 0px solid #8b4513;
+ background-color: #ececec;  
+}
+.spThemeSmallBlock { border: 1px solid #466D9D; padding:4px; }
+.hidden { DISPLAY: none } 
+
+/* Font Colors */
+
+/* 
+ These next 7 are generally table cells, div or span
+ and do not contain a background color
+ The font sizes should descend 
+*/
+.fBold { font-weight: bold; font-size: 11px; color: #112A40; }
+.fAlert { font-weight: bold; color: #FF0000; } 
+.fTitle { font-size: 12px; font-weight: bold; color: #112A40; }
+.fSubTitle { font-size: 12px; font-weight: bold; color: #112A40; }
+.fAltSubTitle { font-size: 12px; font-weight: bold; color: #112A40; }
+.fNorm { font-size: 11px; color: #000000; }
+.fSmall { font-family: Verdana, Arial, sans-serif; font-weight: bold; font-size: 10px; color: #112A40; }
+
+/* User Name In Nav Bar ;) */ 
+.fNavMember { font-family: Verdana, Arial, sans-serif; font-weight: bold; font-size: 10px; color: #47627D; }
+
+/* 
+ These next 3 are generally table cells, div or span
+ and contain a background color
+*/
+.tTitle {
+ background-image: url(Thang.jpg);
+ background-repeat: repeat-x;
+ background-position: center center;
+ margin: 2px;
+ padding: 4px;
+ font-size: 12px; font-weight: bold; color: #112A40; 
+ border: 1px solid #4e708a;
+ background-color: #638aa7;
+}
+.tSubTitle {
+ background-image: url(Thang.jpg);
+ background-repeat: repeat-x;
+ background-position: center center;
+ margin: 2px;
+ padding: 4px;  
+ font-size: 12px; font-weight: bold; color: #112A40;  
+ border: 1px solid #4e708a;  
+ background-color: #638aa7;
+}
+.tAltSubTitle {
+ margin: 2px; 
+ padding: 4px; 
+ font-weight: bold; font-size: 11px; color: #112A40;
+ border: 1px solid #5b7b93;
+ background-color: #8ba7bc;
+}
+
+/* Table Classes */ 
+table { font-size: 10px; text-decoration: none; font-family: Verdana, Arial, sans-serif; text-align: left; color: #112A40; }
+table.grid {
+ font-size: 11px; color: #112A40;
+ text-align: left;
+ border-top: 1pt solid #000000;
+ border-right: 1pt solid #000000;
+ border-bottom: 0pt none #000000;
+ border-left: 0pt none #000000;
+}
+table.grid td {
+ font-size: 11px; color: #112A40;
+ border-top: 0pt solid #112A40;
+ border-right: 0pt solid #112A40;
+ border-bottom: 1pt solid #000000;
+ border-left: 1pt solid #000000;
+}
+.tCellHover { border: 1px solid #879eb5; background-color: #ececec; }
+.tCellAlt0 { border: 1px solid #879eb5; background-color: #a0b6cb; }
+.tCellAlt1 { border: 1pt solid #3d636c; padding: 2px; background-color: #b4cbe2; }
+.tCellAlt2 { border: 1px solid #323A3D; background-color: #bfdaf5; }
+.tContent { color:#112A40; background-color: #c5ccd4; }
+.tBorder {
+ width: 100%;
+ margin: 0px;
+ padding: 2px;
+ font-size: 11px; color: #112A40;
+ border: 1px solid #000000;
+}
+.tPlain {
+ margin: 0px;
+ padding: 0px;
+ border: 0px;
+ font-size: 11px; color: #112A40;  
+ text-align: left;
+ vertical-align: top;
+}
+.clsSpacer {
+ width:10%;
+ margin: 0px;
+ padding: 0px;
+ clear: both;
+ height: 1px;
+}
+   
+/* :: PM Toast Styles 'Frosted' :: */
+/* :: This is the thing that pops-up in the :: */
+/* :: bottom right corner when you receive a PM :: */
+.spThemeToast {
+ width: 165px;
+ height: 100px; 
+ padding: 0px;
+ margin: 1px;  
+ border: 2px solid #000000;
+ position: absolute;
+ bottom: 0px;
+ right: 0px;  
+ background-color: #E7DDDD;
+}
+.spThemeToast_header_left {
+ width: 18px;
+ height: 18px;
+ padding-left: 2px;
+ padding-top: 1px;
+ margin: 0px;
+ background-color: #E7DDDD;	
+}
+.spThemeToast_header_img_left { 
+ width: 18px;
+ height: 18px;
+ padding-left: 4px;
+ padding-top: 2px;
+ margin: 0px;       
+ background-image: url('Mail.gif');
+ background-repeat: no-repeat;
+ background-position: left top;
+}
+.spThemeToast_title {
+ width: 140px;
+ padding-top: 2px;
+ padding-left: 0px;
+ padding-bottom: 0px;
+ margin: 0px;
+ text-align:center;
+ font-family:arial; font-size:11px; font-weight:bold; color: #000000; 
+ border-bottom: 1px dashed #000000;
+ background-color: #E7DDDD;
+}
+.spThemeToast_header_right {
+ width: 18px;
+ height: 18px;
+ padding-top: 3px;
+ margin: 0px;
+ text-align: right;
+ background-color: #E7DDDD;
+}
+.spThemeToast_header_img_right {
+ width: 18px;
+ height: 18px;
+ padding-top: 3px;
+ margin: 0px;
+ cursor: pointer;
+ background-image: url(Exit.gif);
+ background-repeat: no-repeat;
+ background-position: left top;  
+}
+.spThemeToast_content_left { margin: 0px; background-color: #E7DDDD; }
+.spThemeToast_content {
+ FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#FCFCFC', EndColorStr='#C6C6C6');
+ padding-top: 4px;
+ padding-left: 5px;
+ margin: 0px;
+ cursor: pointer;
+ font-family: arial; font-size: 11px; font-weight: bold; color: #000000;
+ background-color: #E7DDDD;
+}
+.spThemeToast_content_right { margin: 0px; background-color:#E7DDDD; } 
+/* :: END PM Toast Styles 'Frosted' :: */

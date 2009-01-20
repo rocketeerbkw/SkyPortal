@@ -1,0 +1,906 @@
+<!-- 
+'::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+'::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+'<> Copyright (C) 2005-2008 Dogg Software All Rights Reserved
+'<>
+'<> By using this program, you are agreeing to the terms of the
+'<> SkyPortal End-User License Agreement.
+'<>
+'<> All copyright notices regarding SkyPortal must remain 
+'<> intact in the scripts and in the outputted HTML.
+'<> The "powered by" text/logo with a link back to 
+'<> http://www.SkyPortal.net in the footer of the pages MUST
+'<> remain visible when the pages are viewed on the internet or intranet.
+'<>
+'<> Support can be obtained from support forums at:
+'<> http://www.SkyPortal.net
+'::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+'::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+-->
+<html>
+<head>
+<title>SkyPortal RC7 | Setup Instructions</title>
+<meta name="copyright" content="Portal code is Copyright (C)2004-2007 Tom Nance (SkyDogg) all Rights Reserved" />
+<style type="text/css">
+<!--
+BODY {scrollbar-face-color:#EAFFFF; scrollbar-shadow-color: darkblue; scrollbar-highlight-color: darkblue; scrollbar-3dlight-color: white; scrollbar-darkshadow-color: ; scrollbar-track-color: whitesmoke; scrollbar-arrow-color: }
+a:link    {color:darkblue;text-decoration:underline}
+a:visited {color:blue;text-decoration:underline}
+a:hover   {color:red;text-decoration:underline}
+-->
+</style>
+</head>
+
+<body bgcolor="white" text="midnightblue" link="#00008B" alink="#FF0000" vlink="#FF0000" topmargin="0" leftmargin="5" marginwidth="0" marginheight="0">
+<a name="toc"></a>
+<table width="100%" border="0" cellspacing="3" cellpadding="1" bgcolor="whitesmoke">
+  <tr> 
+    <td> <table width="100%" border="0" cellspacing="0" cellpadding="1">
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif" size="6"><b>SkyPortal</b>&nbsp; 
+            <font size="3"><a href="http://www.skyportal.net">Version 1.0</a></font><br>
+            <font size="2">Release date: May 19, 2008</font></font></td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td bgcolor="#214793"> <font face="Verdana, Arial, Helvetica, sans-serif"><b><font color="#FFFFFF">Table 
+            of Contents</font></b></font></td>
+        </tr>
+        <tr> 
+          <td> <ol>
+              <li><b><a href="#intro"><font size="2">Introduction</font></a></b></li>
+              <li><b><a href="#requirements"><font size="2">Requirements</font></a></b></li>
+              <li><b><font size="2"><a href="#quick_ins">Quick Installation</a></font></b></li>
+              <li><b><a href="#new_ins"><font size="2">Webhost Installations</font></a></b></li>
+              <ol type="i">
+                <font size="2"> 
+                <li><b><a href="#new_ins_access">Install using MS Access Database</a></b></li>
+                <li><b><a href="#new_ins_mssql">Install using MS SQL Database<br>
+                  </a></b></li>
+                </font> 
+              </ol>
+              <li><font size="2"><b><a href="#new_ins_localhost">Installing on 
+                Localhost</a></b></font></li>
+              <ol type="i">
+                <font size="2"> 
+                <li><b><a href="#local_mmc">IIS Admin using the MMC</a></b></li>
+                <li><b><a href="#local_prep">Prepare Localhost for SkyPortal installation</a></b></li>
+                <li><b><a href="#local_skyportal">Prepare SkyPortal for Localhost 
+                  installation</a></b></li>
+                <li><b><a href="#local_setup">Setting up SkyPortal<br>
+                  </a></b></li>
+                </font> 
+              </ol>
+              <li><b><a href="#upgrade"><font size="2">Upgrading from MaxWebPortal</font></a></b></li>
+              <li><b><a href="#upgradeRC"><font size="2">Upgrade from Previous 
+                SkyPortal Versions</font></a></b></li>
+              <li><b><a href="#post_ins"><font size="2">Post-Install Tasks</font></a></b></li>
+              <li><b><a href="#faq"><font size="2">Frequently Asked Questions</font></a></b></li>
+              <li><b><a href="#contact"><font size="2">Contact Info</font></a></b></li>
+              <li><b><a href="#copyright"><font size="2">Copyright and Disclaimer</font></a></b></li>
+              <li><b><a href="#conclusion"><font size="2">Conclusion</font></a></b></li>
+              <li><b><a href="#credits"><font size="2">Credits</font></a></b></li>
+              <li><b><a href="#changelog"><font size="2">Changelog</font></a></b></li>
+            </ol>
+                
+            <a href="#top"><img src="Themes/Frosty_Sky/icons/icon_go_up.gif" align="right" border="0" alt="Top" title="Back to top" /></a></td>
+        </tr>
+      </table></td>
+  </tr><tr> 
+    <td><table width="100%" border="0" cellspacing="3" cellpadding="3">
+        <tr> 
+          <td bgcolor="#214793"> <font color="#FFFFFF" face="Verdana, Arial, Helvetica, sans-serif"><b>1. 
+            Introduction<a name="intro"></a></b></font></td>
+        </tr>
+        <tr> 
+          <td> <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">We 
+              are glad you found the new website for SkyPortal and hope you continue 
+              to visit us for support of your portal. If you downloaded our software 
+              from any site other than <a href="http://www.SkyPortal.net">http://www.SkyPortal.net</a>, 
+              please contact us and let us know as it is in violation of the SkyPortal 
+              Licensing Agreement.</font></p>
+            <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">SkyPortal 
+              is a modular web portal and online community system which includes 
+              advanced features such as web-based administration, polls, private/public 
+              events calendar, user customizable skins, classifieds, user control 
+              panel, links manager, downloads manager, article manager, picture 
+              gallery and much more. Easy-to-use and powerful user interface allows 
+              members to add news, content, write reviews and share information 
+              among other registered users.</font></p>
+            <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">This 
+              version has many bug fixes, several new security related features, 
+              and, above all, has many of the most popular features available 
+              to make one of the most feature-packed releases of SkyPortal ever!<br />
+              <br />
+              To see a list of the new features available for this release, please 
+              visit our website at <a target="_blank" href="http://www.SkyPortal.net">www.SkyPortal.net</a>.<br />
+              <br />
+              SkyPortal has been designed to be as easy to install as possible. 
+              Follow these instructions and you should have no problems. If you 
+              do encounter any problems installing SkyPortal, please feel free 
+              to <a href="#contact">contact</a> us. </font> </p>
+            <a href="#top"><img src="Themes/Frosty_Sky/icons/icon_go_up.gif" align="right" border="0" alt="Top" title="Back to top" /></a></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr> 
+    <td> <table width="100%" border="0" cellspacing="3" cellpadding="3">
+        <tr> 
+          <td bgcolor="#214793"> <font color="#FFFFFF" face="Verdana, Arial, Helvetica, sans-serif"><b>2. 
+            Requirements<a name="requirements" id="requirements"></a></b></font></td>
+        </tr>
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> 
+            <ul>
+              <b>Minimum Requirements</b> 
+              <li><font size="2">Operating System: <b>Windows 98, Windows 2000, 
+                Windows XP Pro, Windows Server 2003</b></font></li>
+              <li><font size="2">Database System: <b>Access, SQL Server </b></font></li>
+              <li><font size="2">ASP Support: <b>IIS 5, IIS 5.1, IIS 6, Personal 
+                Web Server</b></font></li>
+              <li><font size="2">Server Objects: <b>FileSystemObject, DictionaryObject</b></font></li>
+            </ul>
+            <ul>
+              <b>Optimal requirements</b> 
+              <li><font size="2">Image Component: <b>Asp.Net, AspJpeg, AspImage</b></font></li>
+              <li><font size="2">Email Component:<b> CDOSYS, w3JMail, AspMail, 
+                AspEmail, CDONTS</b></font><a href="#top"><img src="Themes/Frosty_Sky/icons/icon_go_up.gif" align="right" border="0" alt="Top" title="Back to top" /></a></li>
+            </ul>
+            </font> </td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr> 
+    <td> <table width="100%" border="0" cellspacing="3" cellpadding="3">
+        <tr> 
+          <td bgcolor="#214793"><b> <font color="#FFFFFF" face="Verdana, Arial, Helvetica, sans-serif">3</font></b><font color="#FFFFFF" face="Verdana, Arial, Helvetica, sans-serif"><b>. 
+            Quick Installation</b></font><font face="Verdana, Arial, Helvetica, sans-serif"><a name="quick_ins" id="quick_ins"></a></font></td>
+        </tr>
+        <tr> 
+          <td> <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">If 
+              you are sure that your hosting service or server will run SkyPortal 
+              or have previously used SkyPortal, you can use these steps to quickly 
+              get started. For a more detailed explanation please go to the next 
+              section.</font></p>
+            <font face="Verdana, Arial, Helvetica, sans-serif"> 
+            <ol>
+              <li><font size="2">Extract the files to a local directory on your 
+                computer.<br />
+                </font> </li>
+              <li><font size="2">Rename the database in the <b>db/</b> folder.<br />
+                </font> </li>
+              <li><font size="2">Modify <b>config.asp</b> as instructed in the 
+                file.<br />
+                </font> </li>
+              <li> <font size="2">Upload the blank database (<b>sp_db2k6.mdb (renamed) 
+                </b> for Access database) to a directory that has <b>read/write/modify 
+                </b>permission. Use the same path as in the config.asp.<br />
+                </font> </li>
+              <li><font size="2">Upload all files to a web accessible directory 
+                on your server or hosting account.<br>
+                </font></li>
+              <li><font size="2">Copy the <b>global.asa</b> to your domain root. 
+                It will not work in a subfolder.<br>
+                If you already have a global.asa in your domain root, open and 
+                copy the contents of the SkyPortal global.asa file to your existing 
+                global.asa. <br />
+                </font> </li>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">The 
+                <b>FILES</b> directory needs to have <b>read, write and delete 
+                permissions</b> for the <b>ASP.NET, NETWORK, </b>and either the<b> 
+                IUSR_</b> <i>and/or</i><b> IWAM_</b> groups in order to use the 
+                <i> Upload </i>and<i> Image resizing</i> features.</font><font size="2"><br />
+                </font> </li>
+              <li><font size="2">Open your favorite browser and run <b>site_setup.asp</b>. 
+                <i>example: http://www.yourwebsite.com/site_setup.asp</i><br />
+                Follow the instructions provided.</font></li>
+            </ol>
+            <font size="2">You have now finished setting up SkyPortal on your 
+            server. It is highly recommended that you read <a href="#post_ins">Post-Install 
+            Tasks</a> section.<br>
+            </font></font> <a href="#top"><img src="Themes/Frosty_Sky/icons/icon_go_up.gif" align="right" border="0" alt="Top" title="Back to top" /></a> 
+          </td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr> 
+    <td> <table width="100%" border="0" cellspacing="3" cellpadding="3">
+        <tr> 
+          <td bgcolor="#214793"> <font face="Verdana, Arial, Helvetica, sans-serif"><b><font color="#FFFFFF">4. 
+            Webhost Installations</font><font face="Verdana, Arial, Helvetica, sans-serif"><font size="2"><b><font face="Verdana, Arial, Helvetica, sans-serif"><a name="new_ins"></a><a name="new_ins_access"></a></font></b></font></font></b></font></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#EAFFFF"><b> <font face="Verdana, Arial, Helvetica, sans-serif">3.i.<font color="#0000FF"> 
+            Installing with MS Access Database</font></font></b></td>
+        </tr>
+        <tr> 
+          <td> <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Please 
+              read this section thoroughly before proceeding with installation. 
+              </font> </p>
+            <ol>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Extract 
+                the files to a local directory on your computer. </font> <br>
+              </li>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Open 
+                <b>config.asp</b> in your favorite text editor. <i>example: <b>notepad</b></i><br />
+                <font color="#FF0000"><u><b>Do not use Microsoft Word, Microsoft 
+                WordPad, or Microsoft Frontpage to edit these files as each might 
+                corrupt the file</b></u>.</font></font></li>
+              <br /><ul>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Change 
+                the <b>strConnString</b> variable with the correct path to where 
+                your database file (*.mdb) is going to be on the server. If you 
+                are unsure of which <b>strConnString</b> to use, please use the 
+                default one.</font></li>
+              <br>
+              <br />
+              <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Change 
+                the <b>strWebMaster</b> variable to what you want your admin login 
+                name to be. Don't forget the comma after the name. You will use 
+                this name when you run SITE_SETUP.ASP</font></li></ul><br/>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Upload 
+                all files (except your database) to a web accessible directory 
+                on your server or hosting account.</font><br></li>
+			  <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Copy the <b>global.asa</b> to your domain root. 
+                It will not work in a subfolder.<br>
+                If you already have a global.asa in your domain root, open and 
+                copy the contents of the SkyPortal global.asa file to your existing 
+                global.asa.</font><br></li>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2"> 
+                Open the <b>db</b> folder and rename your database.<br />
+                <i> example: my_database.mdb</i></font> </li>
+              <br>
+              <br />
+              <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Upload 
+                the blank (empty) database to a directory that the <b>IUSR_</b> 
+                and/or <b>IWAM_</b> group(s) have <b>read and write permission</b>. 
+                Ideally, this directory is not web accessible, to prevent people 
+                from downloading your database. This should be the same path as 
+                in the <b>strConnString</b>.</font></li>
+              <br>
+              <br />
+              <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">The 
+                <b>FILES</b> directory needs to have <b>read, write and delete 
+                permissions</b> for the <b>ASP.NET, NETWORK, </b>and either the<b> 
+                IUSR_</b> <i>and/or</i><b> IWAM_</b> groups in order to use the 
+                <i> Upload </i>and<i> Image resizing</i> features.</font></li>
+              <br>
+              <br />
+              <li><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Open 
+                your favorite browser and run <b>site_setup.asp</b> to fill in 
+                the setup form. <br />
+                <i>example: http://www.yourwebsite.com/site_setup.asp</i></font></li>
+            </ol>
+            <p><font face="Verdana, Arial, Helvetica, sans-serif"> <font size="2">You 
+              have now finished setting up SkyPortal on your server. Please read 
+              <a href="#post_ins">Post-Install Tasks</a> section.<br />
+              </font></font><a href="#top"><img src="Themes/Frosty_Sky/icons/icon_go_up.gif" align="right" border="0" alt="Top" title="Back to top" /></a><br />
+            </p>
+               </td>
+        </tr>
+        <tr> 
+          <td bgcolor="#EAFFFF"><b> <font face="Verdana, Arial, Helvetica, sans-serif">3.ii. 
+            <font color="#0000FF">Install using MS SQL Server</font><a name="new_ins_mssql"></a></font></b></td>
+        </tr>
+        <tr> 
+          <td> <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Please 
+              read this section thoroughly before proceeding with installation. 
+              </font> </p>
+            <ol>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Extract 
+                the files to a local directory on your computer.<br />
+                </font> </li>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Open 
+                <b>config.asp</b> in your favorite text editor. <i>example: notepad</i></font><br />
+                <font color="#FF0000"><b>Do not use Microsoft Word or Microsoft 
+                Frontpage to edit these files as each might corrupt the file.</b></font><br>
+              </li>
+              <ul>
+                <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Change 
+                  the <b>strConnString</b> variable with the correct information 
+                  to connect to an empty MS SQL database.<br />
+                  You may use DSN to connect or use the IP address of the database. 
+                  <br />
+                  </font> </li>
+                <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Change 
+                  the <b>strWebMaster</b> variable to what you want your admin 
+                  login name to be. Don't forget the comma after the name. You 
+                  will use this name when you run SITE_SETUP.ASP</font><br>
+                </li>
+              </ul>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Upload 
+                all files to a web accessible directory on your server or hosting 
+                account.</font><br></li>
+			  <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Copy the <b>global.asa</b> to your domain root. 
+                It will not work in a subfolder.<br>
+                If you already have a global.asa in your domain root, open and 
+                copy thecontents of the SkyPortal global.asa file to your existing 
+                global.asa.</font><br>
+              </li>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">The 
+                <b>FILES</b> directory needs to have <b>read, write and delete 
+                permissions</b> for the <b>ASP.NET, NETWORK, </b>and either the<b> 
+                IUSR_</b> <i>and/or</i><b> IWAM_</b> groups in order to use the 
+                <i> Upload </i>and<i> Image resizing</i> features.</font></li>
+              <br>
+              <br />
+              <li><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Open 
+                your favorite browser and run <b>site_setup.asp</b> to fill in 
+                the setup form. <br />
+                <i>example: http://www.yourwebsite.com/site_setup.asp</i></font></li>
+            </ol>
+            <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">You 
+              have now finished setting up SkyPortal on your server. Please read 
+              <a href="#post_ins">Post-Install Tasks</a> section.</font><font face="Verdana, Arial, Helvetica, sans-serif"></font><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>
+              </font><font face="Verdana, Arial, Helvetica, sans-serif"></font><font face="Verdana, Arial, Helvetica, sans-serif" size="2"> 
+              <a href="#top"><img src="Themes/Frosty_Sky/icons/icon_go_up.gif" align="right" border="0" alt="Top" title="Back to top" /></a><br />
+              </font> </p></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr> 
+    <td> 
+      <table width="100%" border="0" cellspacing="3" cellpadding="3">
+        <tr> 
+          <td bgcolor="#214793"> <font face="Verdana, Arial, Helvetica, sans-serif"><b><font color="#FFFFFF">5. 
+            Localhost Installation</font><font face="Verdana, Arial, Helvetica, sans-serif"><b><a name="new_ins_localhost"></a></b></font><font color="#FFFFFF"><a name="local_mmc"></a></font></b></font></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#EAFFFF"> <font face="Verdana, Arial, Helvetica, sans-serif"><b>5a. 
+            </b></font><font color="#0000FF" size="3" face="Verdana, Arial, Helvetica, sans-serif"><b>IIS 
+            Admin using the MMC (Microsoft Management Console)</b></font></td>
+        </tr>
+        <tr> 
+          <td><ul>
+              <li><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Add 
+                the IIS snap-in to the MMC shell to make administration of your 
+                web-sites easier<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<b> 1.</b> Click Start&gt;Run and type 
+                MMC and press OK<br>
+                &nbsp;&nbsp;&nbsp;&nbsp; <b>2.</b> On the Console menu, select 
+                File &gt; Open and browse to<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C:\Windows\System32\inetsrv.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp; <b>3.</b> Select<b> iis.msc</b> and click 
+                <b>Open</b> to load the snap-in into your MMC<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8211; you can 
+                now perform all your site administration from within this window</font> 
+                <a href="#top"><img src="Themes/Frosty_Sky/icons/icon_go_up.gif" align="right" border="0" alt="Top" title="Back to top" /></a></li>
+            </ul></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#EAFFFF"> <font face="Verdana, Arial, Helvetica, sans-serif"><b>5b. 
+            </b></font><font size="3" face="Verdana, Arial, Helvetica, sans-serif"><b><font color="#0000FF">Preparing 
+            Localhost for SkyPortal Installation</font><a name="local_prep"></a></b></font></td>
+        </tr>
+        <tr> 
+          <td><ul>
+              <li><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Open 
+                Windows Explorer and navigate to C:\Inetpub\wwwroot<br>
+                (this is the root of your IIS webserver &#8211; you can host multiple 
+                websites from here)</font></li>
+              <li><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Create 
+                a new folder in wwwroot for your new website (e.g. SkyPortal).</font></li>
+              <li><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Open 
+                your MMC - you will now see a file structure in the left-hand 
+                side.- Expand the folders <br>
+                &nbsp;&nbsp;&nbsp; <b>1</b>. Right-click on &#8220;Default Web 
+                Site&#8221; and select New &gt; Virtual Directory<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; which will open the Virtual 
+                Directory Creation Wizard.<br>
+                &nbsp;&nbsp;&nbsp; <b>2</b>. Click Next and enter a name for your 
+                web-site (e.g. SkyPortal).<br>
+                &nbsp;&nbsp;&nbsp; <b>3.</b> Click Next<br>
+                &nbsp;&nbsp;&nbsp;<b> 4.</b> Browse to the directory which you 
+                created in step 1 above.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Select the folder and click 
+                OK<br>
+                &nbsp;&nbsp;&nbsp; <b>5</b>. Click Next<br>
+                &nbsp;&nbsp;&nbsp; <b>6</b>. Select the permissions you wish your 
+                site to have &#8211; read, write, and<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; run scripts is usually enough. 
+                Click Next to complete the wizard </font> <a href="#top"><img src="Themes/Frosty_Sky/icons/icon_go_up.gif" align="right" border="0" alt="Top" title="Back to top" /></a></li>
+            </ul></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#EAFFFF"> <font face="Verdana, Arial, Helvetica, sans-serif"><b>5c. 
+            </b></font><font size="3" face="Verdana, Arial, Helvetica, sans-serif"><b><font color="#0000FF">Preparing 
+            SkyPortal for Localhost installation</font><a name="local_skyportal"></a></b></font></td>
+        </tr>
+        <tr> 
+          <td><ol>
+              <li><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Unzip 
+                the SkyPortal core into the folder you created in step 1 above</font></li>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Copy 
+                the <b>global.asa</b> to your wwwroot folder. It will not work 
+                in a subfolder.<br>
+                If you already have a global.asa in your wwwroot folder, open 
+                and copy the contents of the SkyPortal global.asa file to your 
+                existing global.asa.</font></li>
+              <li><font size="2" face="Verdana, Arial, Helvetica, sans-serif">In 
+                Windows Explorer, navigate to C:\Inetpub\wwwroot\SkyPortal.</font></li>
+              <li><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Right-click 
+                on the db folder and select Properties&gt;Security</font></li>
+              <li><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Ensure 
+                the <b>database</b> and <b>database <i>folder</i></b> has <b>Read, 
+                Write, and Modify</b> permissions set (this must include the Internet 
+                Guest Account user <b>pcname\IUSR_pcname</b>). If prompted, <i>ensure 
+                changes are propagated to the files and child folders</i> &#8211; 
+                it is important that the same permisisons are applied to the database.</font></li>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">The 
+                <b>FILES</b> directory needs to have <b>read, write and delete 
+                permissions</b> for the <b>ASP.NET, NETWORK, </b>and either the<b> 
+                IUSR_</b> <i>and/or</i><b> IWAM_</b> groups in order to use the 
+                <i> Upload </i>and<i> Image resizing</i> features.</font></li>
+              <li><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Open 
+                the db folder and<b> <i>rename your database</i></b></font></li>
+              <li><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Edit 
+                <b>config.asp</b> <br>
+                &nbsp;&nbsp;&nbsp; <b>a.</b> Update the <b>strConnString</b> variable 
+                with the correct path<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to your database file 
+                (*.mdb)<br>
+                &nbsp;&nbsp;&nbsp; <b>b.</b> </font><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Change 
+                the <b>strWebMaster</b> variable to what you want your admin login 
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name to be. Don't forget 
+                the comma after the name as you will use this<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name when you run SITE_SETUP.ASP<br>
+                &nbsp;&nbsp;&nbsp;<b> c.</b>&nbsp; Ensure <b>bFso</b> and <b>bAspNet</b> 
+                are set to <font color="#0000FF"><b>true</b></font> or <font color="#0000FF"><b>false</b></font> 
+                </font> <a href="#top"><img src="Themes/Frosty_Sky/icons/icon_go_up.gif" align="right" border="0" alt="Top" title="Back to top" /></a></li>
+            </ol>
+            </td>
+        </tr>
+        <tr> 
+          <td bgcolor="#EAFFFF"> <font face="Verdana, Arial, Helvetica, sans-serif"><b>5d. 
+            </b></font><font size="3" face="Verdana, Arial, Helvetica, sans-serif"><b><font color="#0000FF">Setting 
+            up SkyPortal</font><a name="local_setup"></a></b></font></td>
+        </tr>
+        <tr> 
+          <td><ol>
+              <li><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Open 
+                Internet Explorer</font></li>
+              <li><font size="2" face="Verdana, Arial, Helvetica, sans-serif">In 
+                the address bar, type http://localhost/SkyPortal/site_setup.asp<br>
+                (where SkyPortal is the name for the site you created earlier).</font></li>
+              <li><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Complete 
+                the setup wizard</font></li>
+              <li><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Take 
+                a bow &#8211; you&#8217;ve done it !</font></li>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Please 
+                read <a href="#post_ins">Post-Install Tasks</a> section.</font><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b></b></font> 
+                <a href="#top"><img src="Themes/Frosty_Sky/icons/icon_go_up.gif" align="right" border="0" alt="Top" title="Back to top" /></a></li>
+            </ol>
+		  </td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr> 
+    <td> <table width="100%" border="0" cellspacing="3" cellpadding="3">
+        <tr> 
+          <td bgcolor="#214793"><b> <font color="#FFFFFF" face="Verdana, Arial, Helvetica, sans-serif">6. 
+            Upgrade from MaxWebPortal<a name="upgrade"></a></font></b></td>
+        </tr>
+        <tr> 
+          <td height="577" valign="top"> <p><font color="#FF0000" size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>This 
+              section is only for intermediate users who know exactly what they 
+              are doing.<br />
+              Backup all your files and database before proceeding with the installation.</b></font></p>
+            <p><font size="3" face="Verdana, Arial, Helvetica, sans-serif"><b>This 
+              version of SkyPortal will detect and upgrade MaxWebPortal v1.3x, 
+              <br />
+              MaxWebPortal v2.1x and upgrade it to the newest version of SkyPortal.</b> 
+              <br />
+              <br />
+              <b><font color="#0000FF">Upgrading from </font></b><font color="#0000FF"><b>MaxWebPortal 
+              v1.3x or MaxWebPortal v2.1x</b></font></font></p>
+            <ol>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif"><b> <font size="2">Backup 
+                your entire site, database and all.</font></b></font></li>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="2">Download 
+                and unzip the SkyPortal 'core' to your hard drive.</font></b></font></li>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="2">If 
+                you are upgrading any or all of the existing Articles, Downloads, 
+                Classifieds,<br />
+                Forums and/or Pictures. Download them from the SkyPortal website 
+                and unzip<br />
+                them to your SkyPortal folder.</font></b></font></li>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="2">Edit 
+                <font color="#FF0000">CONFIG.ASP</font> for your existing database 
+                connection, SuperAdmin members,<br />
+                LCID, and other settings you wish to set.</font></b></font></li>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="2">Edit 
+                <font color="#FF0000">fp_custom</font> and make sure the 'include' 
+                files are uncommented<br />
+                (per module instructions).</font></b></font></li>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="2">Upload 
+                all files to your webserver.</font></b></font></li>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b>Copy 
+                the global.asa to your domain root. It will not work in a subfolder.<br>
+                If you already have a global.asa in your domain root, open and 
+                copy the contents of the SkyPortal global.asa file to your existing 
+                global.asa.</b></font></li>
+              <li><b>The FILES directory also needs to have read, write and delete 
+                permissions for the ASP.NET and NETWORK groups in order to use 
+                the Upload and Image resizing features.</b></li>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="2">Copy 
+                your avatar folder to your &quot;files&quot; folder</font></b></font></li>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="2">Copy 
+                your &quot;files/gallery_images&quot; folder and rename it &quot;pictures&quot;.</font></b></font></li>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="2">Run 
+                site_setup.asp and follow the instructions to upgrade your database.</font></b></font></li>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="2">Any 
+                modules in the list that are NOT selected to upgrade will have 
+                their<br />
+                database tables deleted along with all data in them.</font></b></font></li>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="2">Login 
+                to your site and go to the admin area and run the Avatar Sync 
+                to<br />
+                populate the new folder path in the database for your site avatars.</font></b></font></li>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="2">If 
+                you have active forums, do not set your portal time-offset to 
+                a negative number.</font></b></font></li>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="2">Delete 
+                any files in your site root that start with &quot;create****.asp&quot;.</font></b></font></li>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="2">Delete 
+                the contents of the &quot;install&quot; folder.</font></b></font></li>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="2">Delete 
+                &quot;site_setup.asp&quot; .</font></b></font><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="2"><br />
+                <br />
+                <br />
+                <font color="#FF0000">NOTE:</font> YOUR CURRENT THEME/SKIN WILL 
+                NOT WORK WITH SKYPORTAL.<br />
+                <a href="#top"><img src="Themes/Frosty_Sky/icons/icon_go_up.gif" align="right" border="0" alt="Top" title="Back to top" /></a></font></b></font></li>
+            </ol></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr> 
+    <td> 
+      <table width="100%" border="0" cellspacing="3" cellpadding="3">
+        <tr> 
+          <td bgcolor="#214793"><b> <font color="#FFFFFF" face="Verdana, Arial, Helvetica, sans-serif">7. 
+            Upgrade SkyPortal RCx</font><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="2"><a name="upgradeRC"></a></font></b></font></b></td>
+        </tr>
+        <tr> 
+          <td> <p> <font color="#FF0000" size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>This 
+              section is only for intermediate users who know exactly what they 
+              are doing.<br />
+              Backup all your files and database before proceeding with the installation.</b></font></p>
+            <p><font size="3" face="Verdana, Arial, Helvetica, sans-serif"><b>The 
+              setup will detect and upgrade SkyPortal vRCx to the newest version 
+              of SkyPortal.</b></font><font face="Verdana, Arial, Helvetica, sans-serif"> 
+              </font> </p>
+            <p><font size="3" face="Verdana, Arial, Helvetica, sans-serif"><b><font color="#0000FF">Upgrading 
+              from </font></b><font color="#0000FF"><b>SkyPortal vRCx</b></font></font></p>
+            <ul>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif"><b> <font size="2">Backup 
+                your entire site, database and all.</font></b></font></li>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="2">Download 
+                and unzip the SkyPortal 'core' upgrade files to your hard drive.</font></b></font></li>
+              <li><b><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Download 
+                all modules that you use on your site</font></b></li>
+              <li><b><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Unzip 
+                the modules into the same folder as your upgrade files</font></b></li>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="2">Edit 
+                <font color="#FF0000">CONFIG.ASP</font> for your existing database 
+                connection, SuperAdmin members,<br />
+                LCID, and other settings you wish to set.</font></b></font></li>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="2">Edit 
+                <font color="#FF0000">fp_custom</font> and make sure the 'include' 
+                files are uncommented<br />
+                (per module instructions).</font></b></font></li>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="2">Upload 
+                all files to your webserver.</font></b></font></li>
+			  <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b>Copy the global.asa to your domain root. 
+                It will not work in a subfolder.<br>
+                If you already have a global.asa in your domain root, open and 
+                copy thecontents of the SkyPortal global.asa file to your existing 
+                global.asa.</b></font>
+              </li>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="2">Run 
+                site_setup.asp and follow the instructions to upgrade your database.</font></b></font></li>
+              <li><b><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Run 
+                the create*****.asp files for each of the modules that you have 
+                installed</font></b></li>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="2">Delete 
+                any files in your site root that start with &quot;create****.asp&quot;.</font></b></font></li>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="2">Delete 
+                the contents of the &quot;install&quot; folder.</font></b></font></li>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="2">Delete 
+                &quot;site_setup.asp&quot;.</font></b></font><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="2"></font></b></font></li>
+            </ul>
+            <p><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="2"><font color="#FF0000">&nbsp; 
+              &nbsp;&nbsp;&nbsp;&nbsp; NOTE:</font> YOUR CURRENT PRE-RC3 THEME/SKIN 
+              WILL NOT WORK WITH THIS VERSION OF SKYPORTAL.</font></b></font></p></td>
+        </tr>
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"><b><a href="#top"><img src="Themes/Frosty_Sky/icons/icon_go_up.gif" align="right" border="0" alt="Top" title="Back to top" /></a></b></font></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr> 
+    <td> <table width="100%" border="0" cellspacing="3" cellpadding="3">
+        <tr> 
+          <td bgcolor="#214793"> <font face="Verdana, Arial, Helvetica, sans-serif"><b><font color="#FFFFFF">8. 
+            Post-Install Tasks</font> - <font color="#FFFFFF">new install only</font><font face="Verdana, Arial, Helvetica, sans-serif"><b><a name="post_ins"></a></b></font></b></font></td>
+        </tr>
+        <tr> 
+          <td> <p><font face="Verdana, Arial, Helvetica, sans-serif"> <font size="2">Once 
+              you have successfully installed SkyPortal, log in with the login 
+              name you used as the <b>strWebMaster</b> (without the comma at the 
+              end) and password you chose, click the <b>Admin Options</b> link 
+              located on left menu. Log in again, to access the admin control 
+              panel.<br />
+              <br />
+              For additional security, it is recommended to <font color="#FF0000">move 
+              your access database file to a private folder and rename the file</font>. 
+              </font> <i> <font size="2">example: DogHouse.mdb. </font></i> <font size="2">This 
+              is the same name used in the <b>strConnString</b> variable in the 
+              config.asp file. It is also recommended that you delete the site_setup.asp 
+              file from your server as well as any files inside of the &quot;install&quot; 
+              folder.<br />
+              <br />
+              </font> <b><font size="2">Please take your time and go through every 
+              option in the admin control panel.<br />
+              There is a lot there to absorb! </font> </b></font></p>
+            <ul>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="2">Delete 
+                any files in your site root that start with &quot;create****.asp&quot;.</font></b></font></li>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="2">Delete 
+                the contents of the &quot;install&quot; folder.</font></b></font></li>
+              <li><font face="Verdana, Arial, Helvetica, sans-serif"><b><font size="2">Delete 
+                &quot;site_setup.asp&quot; .</font></b></font><font face="Verdana, Arial, Helvetica, sans-serif"><b> 
+                <br>
+                <a href="#top"><img src="Themes/Frosty_Sky/icons/icon_go_up.gif" align="right" border="0" alt="Top" title="Back to top" /></a></b> 
+                </font></li>
+            </ul></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr> 
+    <td> <table width="100%" border="0" cellspacing="3" cellpadding="3">
+        <tr> 
+          <td bgcolor="#214793"> <font face="Verdana, Arial, Helvetica, sans-serif"><b><font color="#FFFFFF">9. 
+            Frequently Asked Questions</font><font face="Verdana, Arial, Helvetica, sans-serif"><b><a name="faq"></a></b></font></b></font></td>
+        </tr>
+        <tr> 
+          <td> <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+              <b>Q: I get the error message &quot;Operation Must Use An Updatable 
+              Query&quot;, how do I fix it?</b><br />
+              A: This error is typically encountered when Internet Guest account 
+              (IUSR_MACHINE), which is by default part of the &quot;Everyone&quot; 
+              group, does not have Write permission on the database. Give read 
+              and write permission to the directory where the database file is 
+              stored.<br />
+              <br />
+              <b>Q: I get the error message &quot;Object required: 'dDataCache' 
+              &quot;, how do I fix it?</b><br />
+              A: This error is typically encountered when the global.asa is not 
+              in the domain root folder. It will not work in a subfolder. Copy 
+              the global.asa to your domain root. If you already have a global.asa 
+              in your domain root, open and copy the contents of the SkyPortal 
+              global.asa file to your existing global.asa.<br />
+              <br />
+              <b>Q: I&#39;m running SkyPortal on a Non-US English server, the 
+              dates are not displayed properly. How can I fix it?</b><br />
+              A: Open config.asp in your favorite text editor.&nbsp; Change Session.LCID 
+              = 1033 to <b>Session.LCID = 1036</b> (French). To find the LCID 
+              of your country please visit this <a target="_blank" href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/script56/html/vsmscLCID.asp"> 
+              site</a>. </font> </p>
+            <font face="Verdana, Arial, Helvetica, sans-serif" size="2">For more 
+            frequently asked questions please visit our <a target="_blank" href="http://www.SkyPortal.net/fhome.asp"> 
+            FAQ Forum</a>.</font> <p></p></font>
+            <b></b> <a href="#top"><img src="Themes/Frosty_Sky/icons/icon_go_up.gif" align="right" border="0" alt="Top" title="Back to top" /></a> 
+          </td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr> 
+    <td> <table width="100%" border="0" cellspacing="3" cellpadding="3">
+        <tr> 
+          <td bgcolor="#214793"><b> <font color="#FFFFFF" face="Verdana, Arial, Helvetica, sans-serif">10. 
+            Contact Info</font><font face="Verdana, Arial, Helvetica, sans-serif"><a name="contact"></a></font></b></td>
+        </tr>
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif"> 
+            <p><b><font size="2">Website: </font> <a target="_blank" href="http://www.SkyPortal.net"> 
+              <font size="2">www.SkyPortal.net</font></a></b><br />
+              <br />
+              <b><font size="2" color="#008000">Please post your support questions 
+              in one of the forums as we cannot provide individual support by 
+              email or private message.<br>
+              </font><font face="Verdana, Arial, Helvetica, sans-serif"></font><font size="2" color="#008000"> 
+              <a href="#top"><img src="Themes/Frosty_Sky/icons/icon_go_up.gif" align="right" border="0" alt="Top" title="Back to top" /></a><br>
+              </font></b></p>
+            </font></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr> 
+    <td> <table width="100%" border="0" cellspacing="3" cellpadding="3">
+        <tr> 
+          <td bgcolor="#214793"><b> <font color="#FFFFFF" face="Verdana, Arial, Helvetica, sans-serif">11</font></b><font color="#FFFFFF" face="Verdana, Arial, Helvetica, sans-serif"><b>. 
+            Copyright and Disclaimer</b></font><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp;<b><font face="Verdana, Arial, Helvetica, sans-serif"><b><a name="copyright"></a></b></font></b></font></td>
+        </tr>
+        <tr> 
+          <td> <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">This 
+              package and its contents are Copyright <acronym title="There's a new word.">©</acronym> 
+              2005 - 2008 SkyPortal.net All Rights Reserved. By downloading this 
+              program, you are agreeing to the terms of the SkyPortal EULA. All 
+              copyright notices regarding SkyPortal must remain intact in the 
+              scripts and in the outputted HTML.<br>
+              </font><font face="Verdana, Arial, Helvetica, sans-serif"></font><font face="Verdana, Arial, Helvetica, sans-serif" size="2"> 
+              <a href="#top"><img src="Themes/Frosty_Sky/icons/icon_go_up.gif" align="right" border="0" alt="Top" title="Back to top" /></a><br>
+              </font></p></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr> 
+    <td> 
+      <table width="100%" border="0" cellspacing="3" cellpadding="3">
+        <tr> 
+          <td bgcolor="#214793"> <font face="Verdana, Arial, Helvetica, sans-serif"><b><font color="#FFFFFF">12. 
+            Conclusion</font><font face="Verdana, Arial, Helvetica, sans-serif"><b><a name="conclusion"></a></b></font></b></font></td>
+        </tr>
+        <tr> 
+          <td><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Thanks 
+            for using SkyPortal we hope you find it useful. If you have any problems 
+            with the installation process or have suggestions for us, feel free 
+            to join the discussions in our <a target="_blank" href="http://www.SkyPortal.net/fhome.asp"> 
+            Forums</a>.<br>
+            </font><font color="#FFFFFF" face="Verdana, Arial, Helvetica, sans-serif">&nbsp;</font><font face="Verdana, Arial, Helvetica, sans-serif" size="2">&nbsp; 
+            <a href="#top"><img src="Themes/Frosty_Sky/icons/icon_go_up.gif" align="right" border="0" alt="Top" title="Back to top" /></a> 
+            </font></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr> 
+    <td> <table width="100%" border="0" cellspacing="3" cellpadding="3">
+        <tr> 
+          <td bgcolor="#214793"> <font color="#FFFFFF" face="Verdana, Arial, Helvetica, sans-serif"><b>13. 
+            Credits<a name="credits"></a></b></font></td>
+        </tr>
+        <tr> 
+          <td> <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">If 
+              you have any problems, find any bugs or have suggestions (for improvement 
+              or otherwise) please use our support forum at <a href="http://www.SkyPortal.net">http://www.SkyPortal.net</a> 
+              to communicate your issue(s) with us.<br />
+              <br />
+              SkyPortal is a product of the combined work of many individuals 
+              that contributed (and are continuing to contribute) countless hours 
+              of non-funded development time. All of them deserve full credit 
+              for this wonderful product's existence.</font></p>
+            <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">We 
+              wouldn't be here today if it weren’t for Droiyan, MaxWebPortal and 
+              all of the individuals who contributed in many ways and many others 
+              from our forums.</font></p>
+            <hr />
+            <font face="Verdana, Arial, Helvetica, sans-serif">&nbsp;</font> <a href="#top"><img src="Themes/Frosty_Sky/icons/icon_go_up.gif" align="right" border="0" alt="Top" title="Back to top" /></a> 
+          </td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr>
+    <td><table width="100%" border="0" cellspacing="3" cellpadding="3">
+        <tr> 
+          <td bgcolor="#214793"> <font face="Verdana, Arial, Helvetica, sans-serif"><b><font color="#FFFFFF">14. 
+            Changelog</font><font face="Verdana, Arial, Helvetica, sans-serif"><b><a name="changelog"></a></b></font></b></font></td>
+        </tr>
+        <tr> 
+          <td><p><font size="3" face="Verdana, Arial, Helvetica, sans-serif"><b>RC7 to 1.0</b></font></p>
+            <font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+            <ol>
+              <font size="3"><b>Whats New</b></font> 
+              <li>SkyPortal is now<i><b> UTF-8</b></i> by default</li>
+              <li>Improved module integration with the SkyPortal Core</li>
+              <li>Added <i><b>Email Server</b></i> *test* routine</li>
+              <li>Enhanced the <b><i>Email Members</i></b> pages</li>
+              <li>Enhanced the portal <i><b>Skin Manager</b></i></li>
+            </ol>
+            <ol>
+              <font size="3"><b>Changes</b></font> 
+              <li>More bug fixes</li>
+              <li>Rebuilt the Admin Avatar menu</li>
+              <li>UI changes and tweaks to be cross-browser</li>
+            </ol>
+            </font> 
+            <hr />
+            <a href="#top"><img src="Themes/Frosty_Sky/icons/icon_go_up.gif" align="right" border="0" alt="Top" title="Back to top" /></a>
+		  </td>
+        </tr>
+        <tr> 
+          <td><p><font size="3" face="Verdana, Arial, Helvetica, sans-serif"><b>RC6 to RC7</b></font></p>
+            <font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+            <ol>
+              <font size="3"><b>Whats New</b></font> 
+              <li>Improved module integration with the SkyPortal Core</li>
+              <li>Created a better, more robust set of tools for easier module 
+                creation.</li>
+              <li>Created numerous new developer API routines to make common and 
+                complex tasks easier to accomplish.</li>
+              <li>Rewrote the Pending Tasks routines for easier module integration</li>
+              <li>Rewrote the Site Search routines for easier module integration</li>
+              <li>Moved more icons to the Skin folders.</li>
+              <li>Integrated 2 icon files. One for the core icons and one for 
+                custom icons</li>
+              <li>Created an &quot;icon()&quot; function for displaying icons 
+                on pages</li>
+              <li>Added variables to config.asp for registration management and 
+                global triggers</li>
+            </ol>
+            <ol>
+              <font size="3"><b>Changes</b></font> 
+              <li>More bug fixes</li>
+              <li>Resolved some Registration and login *Security Image* issues</li>
+              <li>Resolved some Multi-Language issues concerning SQL calls and 
+                the lower-case letter<b> i</b>.<br>
+                (New installs only. This is not retroactive to resolve existing 
+                databases)</li>
+              <li>Made some minor skinning and cosmetic changes </li>
+            </ol>
+            </font> 
+            <hr />
+            <a href="#top"><img src="Themes/Frosty_Sky/icons/icon_go_up.gif" align="right" border="0" alt="Top" title="Back to top" /></a>
+		  </td>
+        </tr>
+        <tr> 
+          <td><p><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><b>RC5 
+              to RC6</b></font></p>
+            <font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+            <ol>
+              <li>Added integrated Module Category/Subcategorytables</li>
+              <li>Added fields for Email Server USERNAME, PASSWORD and PORT for 
+                those mailservers that require it.</li>
+              <li>Simplified the routine for sending a PM to a member.</li>
+              <li>Added functionality for inserting multiple banners on a page.</li>
+              <li>Added support for menu images to all menu templates.</li>
+              <li>Fixed an issue with checking the <b>asp.net server component</b> 
+                during setup<br>
+                that caused the setup to stall.</li>
+              <li>Resolved issue with adding <b>Countries</b>.</li>
+              <li>Fixed issue in the Control Panel where the members PM Configuration 
+                interface<br>
+                did not show in their CP Preferences.</li>
+              <li>Resolved issue with not being able to login when <b>Site Lockdown</b> 
+                is turned ON</li>
+              <li>Added support for the FREE <b>Dundas Mailer</b> component</li>
+              <li>Added selectors for <b>upload component</b> and <b>image component</b> 
+                in the admin area</li>
+              <li>Added support for <a href="http://www.aspjpeg.com"><b>Persits 
+                AspJpeg</b></a> image component for image resizing.</li>
+              <li>Resolved issue with <b>Random Banners</b> in the header.</li>
+              <li>Resolved a compatability issue with the <b>Announcements Admin</b> 
+                and <b>FCKEditor</b></li>
+              <li>Added scrollbars to the myMax popup window</li>
+              <li>Added support for <b>custom dynamic JavaScript, CSS, and RSS-Xml</b> 
+                *include* files.</li>
+              <li>Numerous bug fixes.</li>
+            </ol>
+            </font> 
+            <hr />
+            <a href="#top"><img src="Themes/Frosty_Sky/icons/icon_go_up.gif" align="right" border="0" alt="Top" title="Back to top" /></a> </td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr> 
+    <td><font face="Verdana, Arial, Helvetica, sans-serif">&nbsp; </font> </td>
+  </tr>
+</table>
+<p>
+<table border="0" align="center" width="100%" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111">
+	<tr>
+		
+    <td bgcolor="whitesmoke" align="left" nowrap> <font face="Verdana, Arial, Helvetica, sans-serif" size="1">SkyPortal 
+      Setup Instructions | May, 2008 | <a href="http://www.SkyPortal.net">Latest 
+      Version</a></font></td>
+		
+    <td bgcolor="whitesmoke" align="right" nowrap> <font face="Verdana, Arial, Helvetica, sans-serif" size="1">© 
+      2005-2008&nbsp;SkyPortal.net All Rights Reserved</font></td>
+	</tr>
+</table></p>
+</body>
+
+</html>

@@ -1,0 +1,642 @@
+
+/* ::: | SKYPORTAL.NET(c)Dogg Software | Frosted | ::: */
+/* ::: | This Stylesheet Modified by Rick Frost {Frost} | ::: */ 
+/* ::: | QnA: Find me at Skyportal.net - Frozenwinds.com ::: */ 
+
+.spHeadTop { display: none; }
+.spNavBarTop { display: none; }
+.spNavBarBottom { display: none; }
+.spFooterTop { display: none; }
+
+/* Header Styles */
+.spHeader {
+ margin-bottom: 0px;
+ padding: 0px;
+ width: 100%;
+}
+.spHeader_tl { display: none; }
+.spHeader_tr { display: none; }
+.spHeader_tc { display: none; }
+.spHeader_ml {
+ height: 104px;	
+ margin: 0px;
+ padding: 0px;
+ background-color: transparent;
+}
+.spHeader_content {
+ height: 104px; 
+ margin-right: 1px;
+ padding: 0px;
+ background-image: url(Hbg.jpg);
+ background-repeat: repeat-x;
+ background-position: left top; 
+ background-color: #c1cccf;
+ text-align: left;
+}
+.spHeader_mr {
+ height: 104px;
+ margin: 0px;
+ padding: 0px;
+ background-image: url(Hbg.jpg);
+ background-repeat: no-repeat;
+ background-position: right top;  
+ background-color: transparent;
+}
+.spHeader_bl { display:none; }
+.spHeader_br { display:none; }
+.spHeader_bc { display:none; }
+.Sp_Header_Login {
+ width: 255px;
+ height: 50px;
+ margin-top: 15px;
+ margin-right: 6px;
+ padding: 0px;   
+ border: 1px solid #0075B8;  
+ background-color: transparent;
+} 
+.Sp_Banner {
+ width: 468px;
+ height: 60px;
+ margin-top: 20px;
+ margin-right: 10px;
+ padding: 0px; 
+ border: 0px;  
+ background-color: transparent;
+}
+.Sp_Other {
+ width: 468px;
+ height: 60px;
+ margin-top: 20px;
+ margin-right: 10px;
+ padding: 0px; 
+ border: 0px;  
+ background-color: transparent; 
+}
+.Sp_Nota {
+ width: 100%;
+ margin: 0px;
+ padding: 0px; 
+ border: 0px; 
+} 
+.Sp_HeaderIcons { margin-top: 50px; }
+/* END Header Styles */
+
+/* NavBar */
+.Sp_NavLeft {
+ width: 6px;	
+ height: 30px;
+ margin: 0px;
+ padding: 0px;
+ background-image: url(NaFoLeft.jpg);
+ background-repeat: no-repeat;
+ background-position: left top;  
+}
+.Sp_NavTile { 
+ height: 30px;
+ margin: 0px;
+ padding-top: 0px;	
+ background-image: url(NaFoBg.jpg);
+ background-repeat: repeat-x;
+ background-position: left top;   
+}
+.Sp_NavRite { 
+ width: 15px;	
+ height: 30px;
+ margin: 0px;
+ padding: 0px;
+ background-image: url(NaFoRite.jpg);
+ background-repeat: no-repeat;
+ background-position: right top;   
+}
+/* End Navbar */
+
+/* Footer */
+.spFooter {
+ margin: 0px;
+ padding: 0px;
+ width: 100%;
+}
+.spFooter_tl { display: none; }
+.spFooter_tr { display:none; }
+.spFooter_tc { display:none; }
+.spFooter_ml {	
+ height: 30px;
+ margin:0px;
+ padding:0px;
+ background-image: url(NaFoLeft.jpg);
+ background-repeat: no-repeat;
+ background-position: left top; 
+}
+.spFooter_mr {	
+ height: 30px;
+ margin-bottom: 0px;
+ padding: 0px;
+ background-image: url(NaFoRite.jpg);
+ background-repeat: no-repeat;
+ background-position: right top; 
+}
+.spFooter_content {
+ height: 30px;
+ margin-top: 0px;
+ margin-bottom: 0px;	
+ margin-right: 15px;
+ margin-left: 6px;
+ padding-top: 7px;
+ padding-right: 0px;
+ padding-left: 0px;  
+ padding-bottom: 0px;   
+ background-image: url(NaFoBg.jpg);
+ background-repeat: repeat-x;
+ background-position: left top;
+}
+.spFooter_bl { display: none; }
+.spFooter_br { display: none; }
+.spFooter_bc { display: none; }
+/* End Footer */
+
+/* Start Main (Center) ThemeBlock - ThemeBlock 1 */
+.spThemeBlock1 {
+ width: auto; 
+ margin: 4px;
+ padding: 0px;  
+ border: 1px solid #4a6880;
+ background-color: #e8f0f7;
+}
+.spThemeBlock1_sh_tr {
+ height: 32px;
+ margin: 0px;
+ padding: 0px;
+ background-image: url(tc1.jpg);
+ background-repeat: no-repeat;
+ background-position: right top; 
+ background-color: transparent;   
+}
+.spThemeBlock1_sh_tl {
+ height: 32px;
+ margin: 0px;
+ padding: 0px;
+ background-image: url(tc1.jpg);
+ background-repeat: no-repeat;
+ background-position: left top; 
+ background-color: transparent;  
+}
+.spThemeBlock1_sh_tc {	
+ height: 32px; 
+ margin-left: 2px;
+ margin-right: 2px;
+ padding: 0px; 
+ background-image: url(tc1.jpg);
+ background-repeat: repeat-x;
+ background-position: center top;
+ border-bottom: 1px solid #4a6880;     
+ background-color: transparent; 
+}
+.spThemeBlock1_tr {
+ height: 32px;
+ margin: 0px;
+ padding: 0px;
+ background-image: url(tc1.jpg);
+ background-repeat: no-repeat;
+ background-position: right top; 
+ background-color: transparent;  
+}
+.spThemeBlock1_tl{
+ height: 32px;
+ margin: 0px;
+ padding: 0px;
+ background-image: url(tc1.jpg);
+ background-repeat: no-repeat;
+ background-position: left top; 
+ background-color: transparent; 
+}
+.spThemeBlock1_tc { 
+ height: 32px; 
+ margin-left: 2px;
+ margin-right: 2px;
+ padding: 0px; 
+ background-image: url(tc1.jpg);
+ background-repeat: repeat-x;
+ background-position: center top; 
+ border-bottom: 1px solid #4a6880;    
+ background-color: transparent; 
+}
+.spThemeBlock1_tc h4 {
+ margin: 0px;
+ padding-bottom: 1px;
+ padding-top: 8px; 
+ padding-left: 4px;	
+ font-family: Verdana,Tahoma,Arial,Sans-Serif; font-size: 12px; color: #002879; font-weight: bold; text-decoration:none; 
+ background-color: transparent;  
+}
+.spThemeBlock1_ml {
+ margin: 0px;
+ padding: 0px; 
+ background-image: url(clear.gif);
+ background-repeat: repeat-y;
+ background-position: left top;	 
+ background-color: transparent;
+}
+.spThemeBlock1_mr {	
+ margin: 0px;
+ padding: 0px; 
+ background-image: url(clear.gif);
+ background-repeat: repeat-y;
+ background-position: right top; 
+ background-color: transparent;
+}
+.spThemeBlock1_content {
+ height: auto;
+ margin: 0px 1px 0px 1px; 
+ padding: 4px; 
+ border: 0px;
+ text-align: center;
+ background-color: #e8f0f7;
+}
+
+.spThemeBlock1_content A { color: #0000ff; text-decoration: none; font-size: 11px; }
+.spThemeBlock1_content A:link { color: #0000ff; text-decoration: none; font-size: 11px; }
+.spThemeBlock1_content A:visited { color: #000000; text-decoration: none; font-size: 11px; }
+.spThemeBlock1_content A:hover	{ color: #FF0000; text-decoration: none; font-size: 11px; }
+.spThemeBlock1_content A:active { color: #00ff00; text-decoration: none; font-size: 11px; }
+
+.spThemeBlock1_br {	
+ height: 1px;
+ margin: 0px; 
+ padding: 0px;
+ background-image: url(clear.gif);
+ background-repeat: no-repeat;
+ background-position: right top; 
+ background-color: transparent;	
+}
+.spThemeBlock1_bl {
+ height: 1px;
+ margin: 0px;
+ padding: 0px; 
+ background-image: url(clear.gif);
+ background-repeat: no-repeat;
+ background-position: left top;	 
+ background-color: transparent;	
+}
+.spThemeBlock1_bc {	
+ height: 1px;
+ margin-left: 1px;
+ margin-right: 1px;	
+ padding: 0px;
+ background-image: url(clear.gif);
+ background-repeat: repeat-x;
+ background-position: left top;  
+ background-color: transparent;		
+}
+.spThemeblock1MinMax { 
+ width: 11px;  
+ height: 9px;  
+ margin-top: 12px;  
+ margin-right: 5px; 
+ padding: 0px;
+ background-color: transparent;   
+}
+
+/* Hide for IE Mac \*/
+* html .spThemeBlock1 { height: 1%; }
+* html .spThemeBlock1_content { height: 1%; }
+/* End Hide */
+
+/* End Main (Center) ThemeBlock - ThemeBlock 1 */
+
+/* Start Left Col ThemeBlock - ThemeBlock 2 */
+.spThemeBlock2 {
+ width: auto; 
+ margin: 2px 2px 0px 2px;
+ padding: 2px 4px 4px 2px;  
+ border: 0px solid #a1b8ca;
+ background-color: transparent;
+}
+.spThemeBlock2_sh_tr {
+ height: 36px;
+ margin: 0px;
+ padding: 0px;
+ background-image: url(tr.gif);
+ background-repeat: no-repeat;
+ background-position: right top; 
+ background-color: transparent;   
+}
+.spThemeBlock2_sh_tl {
+ height: 36px;
+ margin: 0px;
+ padding: 0px;
+ background-image: url(tl.gif);
+ background-repeat: no-repeat;
+ background-position: left top; 
+ background-color: transparent;  
+}
+.spThemeBlock2_sh_tc {	
+ height: 36px; 
+ margin-left: 12px;
+ margin-right: 12px;
+ padding: 0px; 
+ background-image: url(tc.gif);
+ background-repeat: repeat-x;
+ background-position: center top;     
+ background-color: transparent; 
+}
+.spThemeBlock2_tr {
+ height: 36px;
+ margin: 0px;
+ padding: 0px;
+ background-image: url(tr.gif);
+ background-repeat: no-repeat;
+ background-position: right top; 
+ background-color: transparent;  
+}
+.spThemeBlock2_tl{
+ height: 36px;
+ margin: 0px;
+ padding: 0px;
+ background-image: url(tl.gif);
+ background-repeat: no-repeat;
+ background-position: left top; 
+ background-color: transparent;  
+}
+.spThemeBlock2_tc {  
+ height: 36px; 
+ margin-left: 12px;
+ margin-right: 12px;
+ padding: 0px; 
+ background-image: url(tc.gif);
+ background-repeat: repeat-x;
+ background-position: center top;     
+ background-color: transparent; 
+}
+.spThemeBlock2_tc h4 {
+ margin: 0px;
+ padding-left: 0px;
+ padding-top: 12px; 
+ border-bottom: 0px solid #73888D;	
+ font-family: Verdana,Tahoma,Arial,Sans-Serif; font-size: 11px; color: #002267; font-weight: bold; text-decoration:none; 
+ background-color: transparent;  
+}
+.spThemeBlock2_ml {
+ background-image: url(ml-r.gif);
+ background-repeat: repeat-y;
+ background-position: left top;	
+ margin: 0px;
+ padding: 0px;
+ background-color: transparent;
+}
+.spThemeBlock2_mr {
+ background-image: url(ml-r.gif);
+ background-repeat: repeat-y;
+ background-position: right top;	
+ margin: 0px;
+ padding: 0px;
+ background-color: transparent;
+}
+.spThemeBlock2_content {
+ height: auto;
+ margin-left: 1px;
+ margin-right: 1px;  
+ padding: 4px 4px 0px 4px;
+ text-align: center;
+ background-color: #dae5e9;
+}
+
+.spThemeBlock2_content A { color: #0000ff; text-decoration: none; font-size: 11px; }
+.spThemeBlock2_content A:link { color: #0000ff; text-decoration: none; font-size: 11px; }
+.spThemeBlock2_content A:visited { color: #000000; text-decoration: none; font-size: 11px; }
+.spThemeBlock2_content A:hover	{ color: #FF0000; text-decoration: none; font-size: 11px; }
+.spThemeBlock2_content A:active { color: #00ff00; text-decoration: none; font-size: 11px; }
+
+.spThemeBlock2_br {	
+ height: 15px;
+ margin: 0px; 
+ padding: 0px;
+ background-image: url(br.gif);
+ background-repeat: no-repeat;
+ background-position: right top; 
+ background-color: transparent;	
+}
+.spThemeBlock2_bl {
+ height: 15px;
+ margin: 0px;
+ padding: 0px; 
+ background-image: url(bl.gif);
+ background-repeat: no-repeat;
+ background-position: left top;	 
+ background-color: transparent;	
+}
+.spThemeBlock2_bc {
+ height: 15px;
+ margin-left: 15px;
+ margin-right: 15px;	
+ padding: 0px; 
+ background-image: url(bc.gif);
+ background-repeat: repeat-x;
+ background-position: left top;	 
+ background-color: transparent;		
+}
+.spThemeBlock2MinMax { 
+ width: 11px;  
+ height: 9px; 
+ margin-top: 14px;  
+ margin-right: 0px; 
+ padding: 0px;
+ background-color: transparent;   
+}
+
+/* Hide for IE Mac \*/
+* html .spThemeBlock2 { height: 1%; }
+* html .spThemeBlock2_content { height: 1%; }
+/* End Hide */
+
+/* End Left Col ThemeBlock - ThemeBlock 2 */ 
+
+/* Start Rite Col ThemeBlock - ThemeBlock 3 */
+.spThemeBlock3 {
+ width: auto; 
+ margin: 2px 2px 0px 2px;
+ padding: 2px 4px 4px 2px;  
+ border: 0px solid #a1b8ca;
+ background-color: transparent;
+}
+.spThemeBlock3_sh_tr {
+ height: 36px;
+ margin: 0px;
+ padding: 0px;
+ background-image: url(tr.gif);
+ background-repeat: no-repeat;
+ background-position: right top; 
+ background-color: transparent;   
+}
+.spThemeBlock3_sh_tl {
+ height: 36px;
+ margin: 0px;
+ padding: 0px;
+ background-image: url(tl.gif);
+ background-repeat: no-repeat;
+ background-position: left top; 
+ background-color: transparent;  
+}
+.spThemeBlock3_sh_tc {	
+ height: 36px; 
+ margin-left: 12px;
+ margin-right: 12px;
+ padding: 0px; 
+ background-image: url(tc.gif);
+ background-repeat: repeat-x;
+ background-position: center top;     
+ background-color: transparent; 
+}
+.spThemeBlock3_tr {
+ height: 36px;
+ margin: 0px;
+ padding: 0px;
+ background-image: url(tr.gif);
+ background-repeat: no-repeat;
+ background-position: right top; 
+ background-color: transparent;  
+}
+.spThemeBlock3_tl{
+ height: 36px;
+ margin: 0px;
+ padding: 0px;
+ background-image: url(tl.gif);
+ background-repeat: no-repeat;
+ background-position: left top; 
+ background-color: transparent;  
+}
+.spThemeBlock3_tc {  
+ height: 36px; 
+ margin-left: 12px;
+ margin-right: 12px;
+ padding: 0px; 
+ background-image: url(tc.gif);
+ background-repeat: repeat-x;
+ background-position: center top;     
+ background-color: transparent; 
+}
+.spThemeBlock3_tc h4 {
+ margin: 0px;
+ padding-left: 0px;
+ padding-top: 12px; 
+ border-bottom: 0px solid #73888D;	
+ font-family: Verdana,Tahoma,Arial,Sans-Serif; font-size: 11px; color: #002267; font-weight: bold; text-decoration:none; 
+ background-color: transparent;  
+}
+.spThemeBlock3_ml {
+ background-image: url(ml-r.gif);
+ background-repeat: repeat-y;
+ background-position: left top;	
+ margin: 0px;
+ padding: 0px;
+ background-color: transparent;
+}
+.spThemeBlock3_mr {
+ background-image: url(ml-r.gif);
+ background-repeat: repeat-y;
+ background-position: right top;	
+ margin: 0px;
+ padding: 0px;
+ background-color: transparent;
+}
+.spThemeBlock3_content {
+ height: auto;
+ margin-left: 1px;
+ margin-right: 1px;  
+ padding: 4px 4px 4px 4px;
+ text-align: center;
+ border-bottom: 1px solid #4a6880;
+ border-right: 1px solid #DAE2E6;
+ border-left: 1px solid #DAE2E6;   
+ background-image: url(tb3bg.jpg);
+ background-repeat: repeat-x;
+ background-position: left top; 
+ background-color: #dfe6e9;
+}
+
+.spThemeBlock3_content A { color: #0000ff; text-decoration: none; font-size: 11px; }
+.spThemeBlock3_content A:link { color: #0000ff; text-decoration: none; font-size: 11px; }
+.spThemeBlock3_content A:visited { color: #000000; text-decoration: none; font-size: 11px; }
+.spThemeBlock3_content A:hover	{ color: #FF0000; text-decoration: none; font-size: 11px; }
+.spThemeBlock3_content A:active { color: #00ff00; text-decoration: none; font-size: 11px; }
+
+.spThemeBlock3_br {	
+ height: 15px;
+ margin: 0px; 
+ padding: 0px;
+ background-image: url(br.gif);
+ background-repeat: no-repeat;
+ background-position: right top; 
+ background-color: transparent;	
+}
+.spThemeBlock3_bl {
+ height: 15px;
+ margin: 0px;
+ padding: 0px; 
+ background-image: url(bl.gif);
+ background-repeat: no-repeat;
+ background-position: left top;	 
+ background-color: transparent;	
+}
+.spThemeBlock3_bc {
+ height: 15px;
+ margin-left: 15px;
+ margin-right: 15px;	
+ padding: 0px; 
+ background-image: url(bc.gif);
+ background-repeat: repeat-x;
+ background-position: left top;	 
+ background-color: transparent;		
+}
+.spThemeBlock3MinMax { 
+ width: 11px;  
+ height: 9px;  
+ margin-top: 14px;  
+ margin-right: 0px; 
+ padding: 0px;
+ background-color: transparent;   
+}
+
+/* Hide for IE Mac \*/
+* html .spThemeBlock3 { height: 1%; }
+* html .spThemeBlock3_content { height: 1%; }
+/* End Hide */
+
+/* End Rite Col ThemeBlock - ThemeBlock 3 */
+
+/* Theme Changer */
+.spThemeChanger { 
+ width: 168px;
+/* height: 28px; */
+ margin: 2px; 
+ padding: 4px;
+ font-family: arial; font-size: 10px; font-weight: bold; color: #112A40;  
+ background-image: url(MenuBg.jpg);
+ background-repeat: repeat-y;
+ background-position: center center; 
+ border: 1px solid #72959f;  
+ background-color: abc0d3;    
+}
+
+/* Login Box */
+.spThemeNavLog {
+ margin-top:25px; 	
+ padding:5px; 
+ border: 2px solid #000000;  
+ background-color: #C9DAE1; 			
+}
+
+/* Information block that appears in items "full description" */
+/* The small block in in dl.asp for downloads item info  */
+  .infoblock{
+    float: left;
+	margin-right: 15px;
+	margin-bottom: 2px;
+	font-family: Verdana, Arial, sans-serif;
+    font-color: #000000;
+    font-size: 10px;
+	font-style: italic;
+    padding: 8px;
+    border: 1px dashed #05719F;
+    background-color: #EFF8FF; 
+  }
+/* THE END */

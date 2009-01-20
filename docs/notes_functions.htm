@@ -1,0 +1,602 @@
+<%@LANGUAGE="VBSCRIPT" CODEPAGE="CP_ACP"%>
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body>
+<table width="97%" border="1" cellspacing="0" cellpadding="5">
+  <tr align="center"> 
+    <td colspan="3"><b><font color="#0000FF" size="4">Page variables</font></b></td>
+  </tr>
+  <tr> 
+    <td width="23%"><b><font color="#0000FF">Variable Name</font></b></td>
+    <td width="12%"><b><font color="#0000FF">Type</font></b></td>
+    <td width="65%"><b><font color="#0000FF">Value / Description</font></b></td>
+  </tr>
+  <tr> 
+    <td>strSiteOwner</td>
+    <td>string</td>
+    <td>First name in the strWebMaster string</td>
+  </tr>
+  <tr> 
+    <td>strDBNTUserName</td>
+    <td>string</td>
+    <td>Member user name - Blank for guests</td>
+  </tr>
+  <tr> 
+    <td>strUserMemberID</td>
+    <td>integer</td>
+    <td>Current member ID - Value of <font color="#FF0000"><b>-1</b></font> 
+      for guests</td>
+  </tr>
+  <tr> 
+    <td>arrGroups(x,x)</td>
+    <td>array</td>
+    <td>Array holding <b>group id's</b> that member is part of</td>
+  </tr>
+  <tr> 
+    <td>intIsSuperAdmin</td>
+    <td>integer (0-1)</td>
+    <td>boolian - Is current member in the strWebMaster string 
+    </td>
+  </tr>
+  <tr> 
+    <td>strCurDateAdjust</td>
+    <td>date</td>
+    <td> = DateAdd(&quot;h&quot;, strTimeAdjust , Now())<br />
+      returns: 11/18/2005 11:47:51<br />
+      comment: <br />
+      &nbsp; Returns the SERVER time offset that is set in the 
+      admin area.<br />
+      &nbsp; Member offsets are based on this date/time</td>
+  </tr>
+  <tr> 
+    <td>strCurDateString</td>
+    <td>String</td>
+    <td>= DateToStr(strCurDateAdjust)<br />
+      <b>returns:</b> &quot;20060218173402&quot;<br />
+      <b>comment</b>: ISO format<br />
+      &nbsp; This is the variable you use to insert the &quot;current 
+      date&quot; into the&nbsp;&nbsp; database when submitting 
+      or changing items. <br />
+      ALL database 'inserts' that need a current date/time should 
+      use this variable.</td>
+  </tr>
+  <tr> 
+    <td>strCurDateAdjust</td>
+    <td>&nbsp;</td>
+    <td> = strToDate(strCurDateString)<br />
+      returns: 11/18/2005 11:47:51<br />
+      comment: Holds the current 'long date' display for the Member.</td>
+  </tr>
+  <tr> 
+    <td>strCurDate</td>
+    <td>&nbsp;</td>
+    <td>ChkDate(strCurDateString)<br />
+      returns: 11/18/2005<br />
+      comment: Holds the current 'short date' display for the 
+      Member date</td>
+  </tr>
+  <tr> 
+    <td>tempArr(x)</td>
+    <td>&nbsp;</td>
+    <td>array holding the strWebMaster names</td>
+  </tr>
+  <tr> 
+    <td>strOnlinePathInfo</td>
+    <td>&nbsp;</td>
+    <td>Request.ServerVariables(&quot;Path_Info&quot;)</td>
+  </tr>
+  <tr> 
+    <td>strOnlineUser</td>
+    <td>&nbsp;</td>
+    <td>Member username or '<b>Guest</b>'</td>
+  </tr>
+  <tr> 
+    <td>strOnlineUserIP</td>
+    <td>&nbsp;</td>
+    <td>Current users IP. Not valid if intIsSuperAdmin = true</td>
+  </tr>
+  <tr> 
+    <td>strOnlineDate <br />
+      strOnlineCheckInTime</td>
+    <td>&nbsp;</td>
+    <td>DateToStr(Date)<br />
+      DateToStr(strCurDateAdjust) </td>
+  </tr>
+  <tr> 
+    <td>onlinecount<br />
+      strOnlineUsersCount</td>
+    <td>&nbsp;</td>
+    <td>Count of members and guests currently online</td>
+  </tr>
+  <tr> 
+    <td>Guests<br />
+      strOnlineGuestsCount</td>
+    <td>&nbsp;</td>
+    <td>Number of GUESTS currently online</td>
+  </tr>
+  <tr> 
+    <td>Members<br />
+      strOnlineMembersCount</td>
+    <td>&nbsp;</td>
+    <td>Number of MEMBERS currently online</td>
+  </tr>
+  <tr> 
+    <td>CurPageTitle</td>
+    <td>&nbsp;</td>
+    <td>CurPageType with capitalised first letter</td>
+  </tr>
+  <tr> 
+    <td>pmimage</td>
+    <td>&nbsp;</td>
+    <td>Holds the &lt;img&gt; tag for the blinking PM icon or 
+      a spacer</td>
+  </tr>
+  <tr> 
+    <td>pmCount</td>
+    <td>&nbsp;</td>
+    <td>Count of your current unread PMs</td>
+  </tr>
+  <tr> 
+    <td>tmpPageTitle</td>
+    <td>&nbsp;</td>
+    <td>Value for the &lt;title&gt; tag</td>
+  </tr>
+  <tr> 
+    <td>strReferrer</td>
+    <td>&nbsp;</td>
+    <td>chkString(Request.ServerVariables(&quot;HTTP_REFERER&quot;), 
+      &quot;refer&quot;)</td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td>mmImages[0]</td>
+    <td>&nbsp;</td>
+    <td>[JS] &quot;Themes/&lt;%= strTheme %&gt;/icon_max.gif&quot;</td>
+  </tr>
+  <tr> 
+    <td>mmImages[1]</td>
+    <td>&nbsp;</td>
+    <td> [JS] &quot;Themes/&lt;%= strTheme %&gt;/icon_min.gif&quot;</td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td colspan="3" align="center" valign="top"> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="2">
+        <tr> 
+          <td align="center"> <h2>Functions</h2></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#BEE0F1"><b>showMsgBlock(1,strMsg)</b></td>
+        </tr>
+        <tr> 
+          <td>Displays a themeblock with the message passed (strMsg)</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td bgcolor="#BEE0F1"><b>chkIsAdmin(member_ID)</b></td>
+        </tr>
+        <tr> 
+          <td><b>Returns</b>: 0=false 1=true</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td bgcolor="#BEE0F1"><b>chkIsSuperAdmin(type,chk)</b></td>
+        </tr>
+        <tr> 
+          <td><b>type:</b> 1=you are passing the member_ID<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            2=you are passing the member name <br /> <b>chk:</b> Either the member_ID 
+            or member_name depending on the<b> type</b> you set<br /> <b>Returns:</b> 
+            0=false or 1=true</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td bgcolor="#BEE0F1"><b>chkIsMbr(fName, fPassword)</b></td>
+        </tr>
+        <tr> 
+          <td>Returns 0 if not a member and 1 if they are a member. Used for validating 
+            login blocks.</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td bgcolor="#BEE0F1"><strong>randomNum(9000)</strong></td>
+        </tr>
+        <tr> 
+          <td><b>Returns</b>: Random number between 1 and the number passed<br /> 
+            <strong>Use:</strong>&nbsp; iVar = randomNum(9000)</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td bgcolor="#BEE0F1"><b>addToMeta mt,t,c</b></td>
+        </tr>
+        <tr> 
+          <td>Adds a Meta Tag to the page header<br />
+            <br />
+            <b>addToMeta &quot;NAME&quot;,&quot;Description&quot;,&quot;Description 
+            text goes here&quot;</b></td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td bgcolor="#BEE0F1"><b>addJSfile(path_to_file)</b></td>
+        </tr>
+        <tr> 
+          <td>Adds a JavaScript file to the page header<br />
+            <br />
+            Usage:<br />
+            <b>addJSfile(&quot;tiny_mce/tiny_mce.js&quot;)</b> <br />
+            <br />
+            Result:<br />
+            <b>&lt;script type=&quot;text/javascript&quot; src=&quot;tiny_mce/tiny_mce.js&quot;&gt;&lt;/script&gt;</b> 
+          </td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td bgcolor="#BEE0F1"><b>addRSSXML title,url_to_xml</b></td>
+        </tr>
+        <tr> 
+          <td>Adds a RSS-XML file to the page header<br />
+            <br />
+            <b>addRSSXML(strSiteTitle &amp; &quot; News&quot;,strHomeURL &amp; 
+            &quot;modules/rss/rss_news.asp&quot;)</b> .</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td bgcolor="#BEE0F1"><b>addCSSfile(path_to_file)</b></td>
+        </tr>
+        <tr> 
+          <td>Adds page stylesheet<br />
+            <br />
+            <b>addCSSfile(&quot;Modules/custom_styles.css&quot;)</b> .</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td bgcolor="#BEE0F1">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td bgcolor="#BEE0F1"><b>shoBreadCrumb arg1,arg2,arg3,arg4,arg5,arg6</b></td>
+        </tr>
+        <tr> 
+          <td>arg1 = &quot;Admin|admin_home.asp&quot;<br />
+            arg2 = &quot;Upload Manager|admin_config_uploads.asp&quot;<br />
+            arg3 = &quot;&quot;<br />
+            arg4 = &quot;&quot;<br />
+            arg5 = &quot;&quot;<br />
+            arg6 = &quot;&quot;<br /> <br />
+            shoBreadCrumb arg1,arg2,arg3,arg4,arg5,arg6</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td width="61%" bgcolor="#BEE0F1"><b>displayName(<font color="#0000FF">rs(&quot;M_NAME&quot;)</font>,<font color="#FF0000">rs(&quot;M_GLOW&quot;)</font>)</b></td>
+        </tr>
+        <tr> 
+          <td>Displays the member name with the appropriate 'glow'</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td bgcolor="#BEE0F1"><b>sendOutEmail <font color="#FF0000"> s_email_to</font>,<font color="#0000FF"> 
+            s_subject</font>, <font color="#CC0000">s_msg, s_footer_type, s_format</font></b></td>
+        </tr>
+        <tr> 
+          <td><b>s_format</b> - 0=plain text&nbsp;&nbsp; 1=HTML<br /> <b><font color="#CC0000">s_footer_type</font></b> 
+            = adds predefined footer code to the email (This email generated by 
+            SkyPortal)<br /> <br />
+            Use like this for plain text emails<br /> <b>sendOutEmail eml_reciepient,s_subject,s_msg,2,0</b><br /> 
+            <br />
+            Populate the variables and send it.. uses the site default as the 
+            sender.</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td bgcolor="#BEE0F1"><b><b>showPasswordBlock(1,&quot;Themeblock Title&quot;,strBlockMessage,0,0)</b><br />
+            showPasswordBlock(tb_type,tb_title_text,str_Message,show_save-password,show_reg-now)</b> 
+          </td>
+        </tr>
+        <tr> 
+          <td><br />
+            tb_type = boolian: show a themeblock: 0 = no : 1 = yes <br />
+            tb_title_text = Optional - Themeblock Title text<br />
+            str_Message = Optional - Text to display above the textboxes.<br />
+            show_save-password = boolian: show the save-password option: 0 = no 
+            : 1 = yes<br />
+            show_reg-now = boolian: show the &quot;register now&quot; link if 
+            they are not a member: 0 = no : 1 = yes<br /> <br />
+            --------------------------------------------------------------------<br /> 
+            &lt;form action=&quot;somewhere.asp&quot; name=&quot;form_&quot;&gt;<br /> 
+            &lt;input type=&quot;hidden&quot; value=&quot;some_value&quot; name=&quot;some_name&quot;&gt;<br /> 
+            &lt;% <br />
+            strBlockMessage = &quot;Text_here appears above the login fields&quot;<br /> 
+            <b>showPasswordBlock(1,&quot;Edit Profile&quot;,strBlockMessage,0,0)</b><br />
+            %&gt;<br /> &lt;/form&gt; </td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td bgcolor="#BEE0F1"><b><b>showPasswordBlock2(1,&quot;Themeblock Title&quot;,strBlockMessage,0,0,0)</b><br />
+            <b>showPasswordBlock2(1,&quot;&quot;,&quot;&quot;,0,0,0)</b> <br />
+            showPasswordBlock2(tb_type,tb_title_text,str_Message,show_save-password,show_reg-now,show_secImg)</b> 
+          </td>
+        </tr>
+        <tr> 
+          <td><br />
+            tb_type = boolian: show a themeblock: 0 = no : 1 = yes <br />
+            tb_title_text = Optional - Themeblock Title text<br />
+            str_Message = Optional - Text to display above the textboxes.<br />
+            show_save-password = boolian: show the save-password option: 0 = no 
+            : 1 = yes<br />
+            show_reg-now = boolian: show the &quot;register now&quot; link if 
+            they are not a member: 0 = no : 1 = yes<br />
+            show_secImg = boolian: show the security image: 0 = no : 1 = yes<br /> 
+            <br />
+            --------------------------------------------------------------------<br /> 
+            &lt;form action=&quot;somewhere.asp&quot; name=&quot;form_&quot;&gt;<br /> 
+            &lt;input type=&quot;hidden&quot; value=&quot;some_value&quot; name=&quot;some_name&quot;&gt;<br /> 
+            &lt;% <br />
+            strBlockMessage = &quot;Text_here appears above the login fields&quot;<br /> 
+            <b>showPasswordBlock(1,&quot;Edit Profile&quot;,strBlockMessage,0,0,0)</b><br />
+            %&gt;<br /> &lt;/form&gt; </td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td align="center" bgcolor="#FFCC00"><b>&quot;GROUPS&quot; FUNCTIONS</b></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#BEE0F1"><b>hasAccess(&quot;2,4&quot;)</b></td>
+        </tr>
+        <tr> 
+          <td>Boolian - Returns &quot;true&quot; or &quot;false&quot;<br />
+            Checks the member groups against the allowed group list (comma delimited 
+            or an array) that is passed to the function.</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td bgcolor="#BEE0F1"><b>getAppPerms(app, perm_type, type)</b></td>
+        </tr>
+        <tr> 
+          <td> <p>Returns comma delimited string of groups with access<br />
+              <br />
+              <b>app</b> = can be either the app_id or the app INAME.<br />
+              <b>perm_type</b> = Which type of access. &quot;read&quot;, &quot;write&quot;, 
+              &quot;full&quot;<br />
+              <b>type</b> = Type of app variable being passed.<b> &quot;id&quot;</b> 
+              or <b>&quot;&quot;</b><br />
+              <br />
+              Uses:<br />
+              picWriteGroup = <b>getAppPerms(&quot;pictures&quot;,&quot;write&quot;,&quot;&quot;)</b><br />
+              picReadGroup = <b>getAppPerms(intAppID,&quot;read&quot;,&quot;id&quot;)<br />
+              if hasAccess(<font color="#0000FF">getAppPerms(intAppID,&quot;read&quot;,&quot;id&quot;)</font>) 
+              then</b> ...<br />
+              <b>if hasAccess(<font color="#0000FF">getAppPerms(&quot;pictures&quot;,&quot;read&quot;,&quot;&quot;)</font>) 
+              then</b> ... <br />
+              <b>if hasAccess(<font color="#0000FF">picReadGroup</font>) then</b> 
+              ...<br />
+            </p></td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td bgcolor="#BEE0F1"><b>setAppPerms(app,fld)</b></td>
+        </tr>
+        <tr> 
+          <td> <p>Sets 3 variables to the app read/write/full groups. <br />
+              This function should only be called on individual module pages.<br />
+              It populates the variables for use within the rest of the module.</p>
+            <p><b>app</b> = can be either the app_id or the app INAME<br />
+              <b>fld</b> = Type of app variable being passed. <b>&quot;id&quot;</b> 
+              or <b>&quot;&quot;</b> </p>
+            <p><b>intAppID = </b>Module App_ID<b><br />
+              sAppRead</b> = comma delimited string of groups with <b>READ</b> 
+              access<br />
+              <b>sAppWrite</b> = comma delimited string of groups with <b>WRITE</b> 
+              access<br />
+              <b>sAppFull</b> = comma delimited string of groups with <b>FULL</b> 
+              access<br />
+              <b>bAppRead</b> = true/false - member has <b>READ</b> access<br />
+              <b>bAppWrite</b> = true/false - member has <b></b><b>WRITE</b> access<br />
+              <b>bAppFull</b> = true/false - member has <b></b><b>FULL</b> access<br />
+              <b>intSubscriptions</b> = integer - 0/1 - (off/on) - allow module 
+              Subscriptions<br />
+              <b>intBookmarks</b> = integer - 0/1 (off/on) - allow module Bookmarks 
+              <br />
+              <b>intSecCode</b> = integer - 0/1(off/on) - require SecureImage 
+              for submitting items</p></td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td align="center" bgcolor="#FFCC00"><b>DATE - TIME FUNCTIONS</b></td>
+        </tr>
+        <tr> 
+          <td> dispDays = DateDiff(&quot;d&quot;, chkDate2(rsLink(&quot;POST_DATE&quot;)), 
+            chkDate2(rsLink(&quot;END_DATE&quot;)))<br />
+            dateSince = DateDiff(&quot;d&quot;, chkDate2(rsLink(&quot;POST_DATE&quot;)), 
+            strCurDateAdjust)</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td><br />
+            strCurDateAdjust = DateAdd(&quot;h&quot;, strTimeAdjust , Now())<br />
+            strCurDateString = DateToStr(strCurDateAdjust)<br />
+            strCurDateAdjust = strToDate(strCurDateString)<br />
+            strCurDate = ChkDate(strCurDateString)</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td bgcolor="#BEE0F1"><b>getDateDiff(date_string1,date_string2)</b></td>
+        </tr>
+        <tr> 
+          <td> <ul>
+              Usage: <br />
+              <b>current_date = strCurDateString </b><br />
+              <li>intDateDifference =<b> getDateDiff(current_date, <font color="#FF0000">past_date</font>)</b> 
+                '= returns: <b><font color="#0000FF">positive number</font></b></li>
+              <li>intDateDifference = <b>getDateDiff(current_date, <font color="#0000FF">future_date</font>)</b> 
+                '= returns: <font color="#FF0000"><b>negative number </b></font></li>
+              <li>intDateDifference = <b>getDateDiff( <font color="#0000FF">future_date</font>, 
+                current_date)</b> '= returns: <b><font color="#0000FF">positive 
+                number </font></b></li>
+              <li>intDateDifference = <b>getDateDiff( <font color="#FF0000">past_date</font>, 
+                current_date)</b> '= returns: <font color="#FF0000"><b>negative 
+                number</b></font></li>
+              <li>intDateDifference = <b>getDateDiff( <font color="#0000FF">future_date</font>, 
+                <font color="#FF0000">past_date</font>)</b> '= returns: <b><font color="#0000FF">positive 
+                number</font></b></li>
+              <li>intDateDifference = <b>getDateDiff( <font color="#FF0000">past_date</font>, 
+                <font color="#0000FF">future_date</font>)</b> '= returns: <font color="#FF0000"><b>negative 
+                number</b></font></li>
+            </ul></td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td bgcolor="#BEE0F1"><b>strToDate(strDateString)</b></td>
+        </tr>
+        <tr> 
+          <td>Returns the current &quot;long date&quot; of the string being passed</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td bgcolor="#BEE0F1"><b>chkDate(strDateString)</b></td>
+        </tr>
+        <tr> 
+          <td>Returns the current &quot;short date&quot; of the string being passed</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td bgcolor="#BEE0F1"><b>chkTime(strDateString)</b></td>
+        </tr>
+        <tr> 
+          <td>Returns the current 'time' of the string being passed</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td colspan="3">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td colspan="3"> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="2">
+        <tr> 
+          <td align="center" bgcolor="#FFCC00"><b><font size="5">JavaScript</font></b></td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td>&lt;img src=&quot;images/thingy.gif&quot; onclick=&quot;javascript:document[formname][hidden 
+            field name'].value='[value that button would have 
+            if you used it]';submit()&quot;&gt;</td>
+        </tr>
+        <tr> 
+          <td>&lt;td onclick=&quot;document.location.href='pm.asp'&quot;&gt;</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>
