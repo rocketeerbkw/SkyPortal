@@ -339,24 +339,19 @@ arrItemsGrp1[7] = 4;
 
 function selectChange(control, controlToPopulate, ItemArray, GroupArray)
 {
-  var myEle;
   var x;
+  var cntTotalOptions = 0;
   // Empty the second drop down box of any choices
-  for (var q=controlToPopulate.options.length;q>=0;q--) controlToPopulate.options[q]=null;
+  controlToPopulate.options.length = 0;
   // ADD Default Choice - in case there are no values
-  myEle = document.createElement("option");
-  myEle.value = 0;
-  myEle.text = "[SELECT]";
-  controlToPopulate.add(myEle);
+  controlToPopulate.options[cntTotalOptions] = new Option('[SELECT]',0);
   
   for ( x = 0 ; x < ItemArray.length  ; x++ )
     {
       if ( GroupArray[x] == control.value )
         {
-          myEle = document.createElement("option");
-          myEle.value = x+1;
-          myEle.text = ItemArray[x];
-          controlToPopulate.add(myEle);
+          cntTotalOptions++;
+          controlToPopulate.options[cntTotalOptions] = new Option(ItemArray[x],x+1);
         }
     }
 }

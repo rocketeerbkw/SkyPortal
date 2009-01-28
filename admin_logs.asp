@@ -116,7 +116,7 @@ end if
 Response.Write "<table border=""0"" cellpadding=""0"" cellspacing=""4"" width=""100%"" align=""center"">"
 Response.Write "<tr><td align=""center"" colspan=""4"">"
 Response.Write "<input id=""delcur"" name=""delcur"" type=""button"" onclick=""delCurLog();"" value=""Delete Current Log"" />&nbsp;&nbsp;&nbsp;"
-Response.Write "<select id=""logview"" name=""logview"" onChange=""shoLogfile(this.options.value)"">"
+Response.Write "<select id=""logview"" name=""logview"" onChange=""shoLogfile(this.options[this.selectedIndex].value)"">"
 if isArray(allFinfo) then
   for x = 0 to ubound(allFinfo)
     Response.Write "<option value=""" & allFinfo(x).name & """" & chkSelect(sFile,allFinfo(x).name) & ">"

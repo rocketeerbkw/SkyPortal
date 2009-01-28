@@ -238,13 +238,13 @@ spThemeBlock1_open(intSkin)
   			strTheUserID = rs("UserID")
   			strTheUserID = OnlineSQLdecode(strTheUserID)
 
-  			if Right(rs("UserID"), 5) <> txtGuest then
+  			if Right(rs("UserID"), len(txtGuest)) <> txtGuest then
 				strSql = "SELECT "   & strMemberTablePrefix & "MEMBERS.MEMBER_ID, " & strMemberTablePrefix & "MEMBERS.M_NAME, " & strMemberTablePrefix & "MEMBERS.M_GLOW, " & strTablePrefix & "ONLINE.UserID "
 				strSql = strSql & " FROM " & strTablePrefix & "MEMBERS, " & strTablePrefix & "ONLINE "
 				strSql = strSql & " WHERE " & strMemberTablePrefix & "MEMBERS.M_NAME = '" & rs("UserID") & "' "
 	set rsMember =  my_Conn.Execute (strSql)
 			end if
-if Right(rs("UserID"), 5) = txtGuest then
+if Right(rs("UserID"), len(txtGuest)) = txtGuest then
 num = num + 1
    '***********************>>  START ROBOT MOD  <<*********************************
    tmpRobot = lcase(left(rs("UserAgent"),3))

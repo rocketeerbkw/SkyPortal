@@ -801,7 +801,7 @@ end if
           <td align="right">&nbsp;
           </td>
           <td>
-          <input type="hidden" name="m_id" value="<%=clng(request("id"))%>">
+          <input type="hidden" name="m_id" value="<%=request("id")%>">
           <input type="hidden" name="cmd" value="2">
           <input type="hidden" name="MSG" value="<%=MyMSG%>">
           <input type="hidden" name="MailAllMembers" value="<%=iMAilAll%>">

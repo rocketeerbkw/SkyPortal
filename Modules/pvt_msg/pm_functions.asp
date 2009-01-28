@@ -575,7 +575,7 @@ function sendPMtoMember(iTo,iFrom,sSubj,sMsg,iOutBox,errMsg)
 end function
 
 Function sendPMtoNewUser(reciev)
-  if chkAPP("PM","USERS") then
+  if chkAPP("PM") then
 	strSql = "SELECT AUTOPM_ON, AUTOPM_SUBJECTLINE, AUTOPM_MESSAGE "
 	strSql = strSql & "FROM " & strTablePrefix & "CONFIG "
 	strSql = strSql & "WHERE CONFIG_ID = 1"
@@ -852,7 +852,7 @@ sub sendPM(typ)
 			executeThis(strSql)
 
 			'###### PM all members Mod - Take out e-mail notification #####
-			if request.form("allmem") and request.form("allmem") <> "true" then	
+			if request.form("allmem") <> "true" then	
 				if strEmail = "1" and rsName("M_PMEMAIL") = "1" then
 					DoPmEmail arrNames(i),rsName("M_EMAIL"),strSubject
 				end if
