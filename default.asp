@@ -78,9 +78,21 @@ if strdbntusername <> "" and intMyMax then
   set rsFP = my_Conn.execute(fpSQL)
   if not rsFP.eof then
     ':: use default layout
+    if l_sticky <> "" then
     left_Col = l_sticky & "," & rsFP("fp_leftcol")
-    main_Col = m_sticky & "," & rsFP("fp_maincol")
-    right_Col = r_sticky & "," & rsFP("fp_rightcol")
+	else
+	    left_Col = rsFP("fp_leftcol")
+	end if
+	if m_sticky <> "" then
+	    main_Col = m_sticky & "," & rsFP("fp_maincol")
+	else
+	    main_Col = rsFP("fp_maincol")
+	end if
+	if r_sticky <> "" then
+	    right_Col = r_sticky & "," & rsFP("fp_rightcol")
+	else
+	    right_Col = rsFP("fp_rightcol")
+	end if
   end if
   set rsFP = nothing
 end if

@@ -24,6 +24,7 @@ strEditorElements = ""
 <!-- #include file="lang/en/core_admin.asp" -->
 <!--#include file="inc_functions.asp" -->
 <!--#include file="inc_top.asp" -->
+<% if hasAccess(1) then %>
 <!--#include file="includes/inc_admin_functions.asp" -->
 <%
 if request("cmd") <> "" then
@@ -244,6 +245,7 @@ spThemeBlock1_close(intSkin)
 </tr>
 </table>
 <!--#include file="inc_footer.asp" -->
+<% else Response.Redirect "admin_login.asp?target=admin_emaillist.asp" end if %>
 <%
 '::::::::::::::::::::::::::::::::::::::::::::::::::::::: PAGE FUNCTIONS :::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 function adm_listMembers()
@@ -455,7 +457,7 @@ function adm_ManageMessages()
 select case chkString(request("mode"),"numeric")
 	
 	case 1 'delete
-		executeThis("Delete * From PORTAL_SPAM WHERE ID=" & chkString(request("msg_id"),"numeric"))
+		executeThis("Delete From PORTAL_SPAM WHERE ID=" & chkString(request("msg_id"),"numeric"))
 		strMsg = "<font class=""fTitle"">Message Removed!</font>"
 	case 2 'edit
 	
