@@ -131,7 +131,7 @@ if ErrorCount = 0 then
 			end if
 			
 	'response.Write("<b>instType: </b>" & instType & "<br />")
-		if instType = "new" or instType = "migrateMwpxNext" then
+		if instType = "new" or instType = "upgrade13" or instType = "migrateMwpxNext" then
 			dim	buArticle, buDL, buClassified, buForums, buPics, buLinks
 			buArticle = cint(request.Form("Articles"))
 			buDL = cint(request.Form("Downloads"))

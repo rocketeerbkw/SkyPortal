@@ -18,7 +18,7 @@ sub update_rc6_rc7()
   sSql = "ALTER TABLE " & strTablePrefix & "M_SUBCATEGORIES ADD [ITEM_CNT] LONG DEFAULT 0"
   'alterTable(checkIt(strSql))
   'doSQL2 checkIt(sSql),1
-  executeThis(sSql)
+  executeThis(checkIt(sSql))
   sSql = "UPDATE " & strTablePrefix & "M_SUBCATEGORIES SET ITEM_CNT=0"
   executeThis(sSql)
   

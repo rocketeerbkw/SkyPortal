@@ -78,11 +78,17 @@ Sub writeFlash(swfImg) %>
                 <td width="90" align="center" valign="middle"><b><%= txtPass %>:</b><br />
                   <input class="textbox" type="password" name="Password" size="10" />
                 </td>
+				<% If SecImage >1 Then %>
+                <td align="center" height="50">
+                <img src="includes/securelog/image.asp" alt="<%= txtSecImg %>" title="<%= txtSecImg %>" /><br />
+                <input class="textbox" type="text" name="secCode" size="15" maxlength="8" value="<%= txtSecCode %>" onFocus="javascript:this.value='';" />
+                </td>
+                <%end if %>
                 <td width="75" align="center" valign="middle">&nbsp;<input class="btnLogin" type="submit" value="<%= txtLogin %>" id="submitx1" name="submitx1" />
 				</td>
               </tr>
               <tr> 
-                <td colspan="3" align="center"> 
+                <td colspan="4" align="center"> 
                   <input type="checkbox" name="SavePassWord" value="true" checked />
                   <span class="fSmall"><%= txtSvPass %>&nbsp;&nbsp;</span>
                   <%if (lcase(strEmail) = "1") then %>
