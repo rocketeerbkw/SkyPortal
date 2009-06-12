@@ -952,7 +952,7 @@ select case Request.QueryString("mode")
 	  end if
 	  sNewEmail = false
 	  if strUniqueEmail = "1" then
-		if lcase(Request.Form("Email")) <> lcase(Request.Form("Email2")) then
+		if ((lcase(Request.Form("Email")) = lcase(Request.Form("Email2"))) and (lcase(Request.Form("Email")) <> lcase(Request.Form("Email3")))) then
 		  strSql = "SELECT M_EMAIL FROM " & strMemberTablePrefix & "MEMBERS "
 		  strSql = strSql & " WHERE M_EMAIL = '" & Trim(chkString(Request.Form("Email"),"sqlstring")) &"'"
 		  set rs = my_Conn.Execute (strSql)
@@ -969,7 +969,7 @@ select case Request.QueryString("mode")
 		  end if
 		end if
 	  else
-		if lcase(Request.Form("Email")) <> lcase(Request.Form("Email2")) and lcase(strEmail) = "1"  and (strEmailVal = 5 or strEmailVal = 6 or strEmailVal = 8) then
+		if ((lcase(Request.Form("Email")) = lcase(Request.Form("Email2"))) and (lcase(Request.Form("Email")) <> lcase(Request.Form("Email3")))) and lcase(strEmail) = "1"  and (strEmailVal = 5 or strEmailVal = 6 or strEmailVal = 8) then
 		  verKey = GetKey("sendemail")
 		  sNewEmail = true
 		end if
