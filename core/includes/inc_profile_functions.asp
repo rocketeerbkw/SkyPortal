@@ -951,30 +951,28 @@ select case Request.QueryString("mode")
 		Err_Msg = Err_Msg & "<li>" & txtPrefixUrl & "</li>"
 	  end if
 	  sNewEmail = false
-	  if strUniqueEmail = "1" then
-		if ((lcase(Request.Form("Email")) = lcase(Request.Form("Email2"))) and (lcase(Request.Form("Email")) <> lcase(Request.Form("Email3")))) then
-		  strSql = "SELECT M_EMAIL FROM " & strMemberTablePrefix & "MEMBERS "
-		  strSql = strSql & " WHERE M_EMAIL = '" & Trim(chkString(Request.Form("Email"),"sqlstring")) &"'"
-		  set rs = my_Conn.Execute (strSql)
-		  if rs.BOF and rs.EOF then
-			'## Do Nothing - proceed
-		  Else
-			Err_Msg = Err_Msg & "<li>" & txtEmlInUse & "</li>"
-		  end if
-		  rs.close
-		  set rs = nothing
-		  if lcase(strEmail) = "1" and Err_Msg = ""  and (strEmailVal = 5 or strEmailVal = 6 or strEmailVal = 8) then
-			verKey = GetKey("sendemail")
-			sNewEmail = true
-		  end if
-		end if
-	  else
-		if ((lcase(Request.Form("Email")) = lcase(Request.Form("Email2"))) and (lcase(Request.Form("Email")) <> lcase(Request.Form("Email3")))) and lcase(strEmail) = "1"  and (strEmailVal = 5 or strEmailVal = 6 or strEmailVal = 8) then
-		  verKey = GetKey("sendemail")
-		  sNewEmail = true
-		end if
-	  end if
 	  
+		if (lcase(Request.Form("Email")) = lcase(Request.Form("Email2"))) then
+			if (lcase(Request.Form("Email")) <> lcase(Request.Form("Email3"))) then
+				if strUniqueEmail = "1" then
+					strSql = "SELECT M_EMAIL FROM " & strMemberTablePrefix & "MEMBERS "
+					strSql = strSql & " WHERE M_EMAIL = '" & Trim(chkString(Request.Form("Email"),"sqlstring")) &"'"
+					set rs = my_Conn.Execute (strSql)
+					if rs.BOF and rs.EOF then
+						sNewEmail = true
+					else
+						Err_Msg = Err_Msg & "<li>" & txtEmlInUse & "</li>"
+					end if
+					rs.close
+					set rs = nothing
+				else
+					sNewEmail = true
+				end if
+			end if
+		else
+			Err_Msg = Err_Msg & "<li>" & txtEmlNoMatch & "</li>"
+		end if
+	  	  
 	  if Err_Msg = "" then '## it is ok to update the profile
 		if Trim(Request.Form("Homepage")) <> "" and lcase(trim(Request.Form("Homepage"))) <> "http://" and Trim(lcase(Request.Form("Homepage"))) <> "https://" then
 		  regHomepage = ChkString(Request.Form("Homepage"),"display")
@@ -1005,10 +1003,8 @@ select case Request.QueryString("mode")
 		else
 			strSql = strSql & ", M_USERNAME = '" & ChkString(Request.Form("Account"),"sqlstring") & "'"
 		end if
-		if (strEmailVal = 5 or strEmailVal = 6 or strEmailVal = 8) then
-		  strSql = strSql & ", M_NEWEMAIL = '" & chkString(Request.Form("Email"),"SQLString") & "'"
-		else
-		  strSql = strSql & ", M_EMAIL = '" & chkString(Request.Form("Email"),"SQLString") & "'"
+		if sNewEmail then
+			strSql = strSql & ", M_EMAIL = '" & chkString(Request.Form("Email"),"SQLString") & "'"
 		end if
 		strSql = strSql & ", M_KEY = '" & chkString(verKey,"SQLString") & "'"
 		strSql = strSql & ", M_RECMAIL  = '" & ChkString(Request.Form("RECMAIL"),"sqlstring")  & "'"
@@ -1097,9 +1093,6 @@ select case Request.QueryString("mode")
 		end if		
 	  	tmpResult = ""
 	  	tmpResult = tmpResult & "<p align=""center""><span class=""fTitle"">" & txtProfUpd & "</span></p>"
-		if sNewEmail= true and strEmail= 1 and (strEmailVal= 5 or strEmailVal= 6 or strEmailVal= 8) then
-	  	  tmpResult = tmpResult & txtEmlHasChgd
-		end if
 	  	call showMsgBlock(1,tmpResult)
 		%>
 		<p align="center"><a href="members.asp"><%= txtBack %></a></p>
