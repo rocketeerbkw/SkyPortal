@@ -1,0 +1,145 @@
+<html>
+    <head>
+        <title>README - Forms Module</title>
+        <style type="text/css">
+            body {
+                font-family: helvetica;
+                font-size: 0.8em;
+                width: 60em;
+            }
+            h2 {
+                color: #FFFFFF;
+                background-color: #000000;
+                padding: 0.3em;
+            }
+            .cheading {
+                font-weight: bold;
+                color: #FFFFFF;
+                background-color: darkblue;
+            }
+            .code {
+                font-family: courier new;
+                font-size: 90%;
+            }
+            #tInfo {
+                background-color: lightgrey;
+                font-size: 100%;
+            }
+            #tChangelog {
+                background-color: lightgrey;
+                font-size: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <h1><a name="top">SkyPortal Forms Module</a></h1>
+        <p>Give site administrators the ability to generate and customize forms online and in real time.</p>
+        <table border="0" cellpadding="3" cellspacing="0" id="tInfo">
+            <tr>
+                <td colspan="2" align="center" valign="top" class="cheading">Info</td>
+            </tr>
+            <tr>
+                <td align="right" valign="top">Version:</td>
+                <td align="left" valign="top">2.5</td>
+            </tr>
+            <tr>
+                <td align="right" valign="top">Author:</td>
+                <td align="left" valign="top">Brandon Williams (<a href="http://www.skyportal.net/cp_main.asp?cmd=8&member=47" target="_blank">Battousai</a>)</td>
+            </tr>
+            <tr>
+                <td align="right" valign="top">Copyright:</td>
+                <td align="left" valign="top"><a href="license_forms_module.txt" target="_blank">See included license file</a></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center" valign="top" class="cheading">Compatibility</td>
+            </tr>
+            <tr>
+                <td align="right" valign="top">SkyPortal:</td>
+                <td align="left" valign="top">RC7 - v1.0</td>
+            </tr>
+            <tr>
+                <td align="right" valign="top">Database:</td>
+                <td align="left" valign="top">Access (tested)<br />MSSQL (not tested)</td>
+            </tr>
+            <tr>
+                <td align="right" valign="top">Dependency:</td>
+                <td align="left" valign="top">SkyPortal Core</td>
+            </tr>
+        </table>
+    	<h2><a name="install">Installation</a></h2>
+        <h3><a name="nInstall">New Install</a></h3>
+        <ol>
+            <li>Upload all <a href="#files">files</a> in the zip to root of your SkyPortal installation</li>
+            <li>Add <span class="code">&lt;!--#include file=&quot;modules/forms/fp_forms.asp&quot; --&gt;</span> to fp_custom.asp (HINT: next to all the other ones)</li>
+            <li>Run createForms.asp</li>
+            <li>Delete createForms.asp</li>
+            <li>Enjoy :)</li>
+        </ol>
+        <h3><a name="upgrade">Upgrade</a></h3>
+        <ol>
+            <li>Upload all <a href="#files">files</a> in the zip to root of your SkyPortal installation, overwriting the previous version</li>
+            <li>Run createForms.asp</li>
+            <li>Delete createForms.asp</li>
+            <li>Enjoy :)</li>
+        </ol>
+
+
+        <h2><a name="support">Support</a></h2>
+        <p>If you need help, or something broke, you can get support at <a href="http://www.skyportal.net">http://www.skyportal.net</a></p>
+        <p>NOTE: This is NOT an official SkyPortal module.  You may not be able to get support from anyone other than the author(s) so please be respectful to everyone who is trying to help you.</p>
+
+        <h2><a name="files">Files</a></h2>
+        <ul>
+            <li>createForms.asp</li>
+            <li>admin_forms.asp</li>
+            <li>form.asp</li>
+            <li>README_forms.txt</li>
+            <li>license_forms_module.txt</li>
+            <li>images/icons/icon_ajax_loading.gif</li>
+            <li>modules/forms/form_functions.asp</li>
+            <li>modules/forms/fp_forms.asp</li>
+        </ul>
+
+        <h2><a name="changelog">Changelog</a></h2>
+        <table border="0" cellpadding="3" cellspacing="0" id="tChangelog">
+            <tr>
+                <td class="cheading">2.5</td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="code">[NEW]</span> Ability to PM/Email SkyPortal Members<br />
+                    <span class="code">[FIX]</span> Compatibility issue with SkyCalendar<br />
+                    <span class="code">[FIX]</span> CurPageInfo Check<br />
+                    <span class="code">[FIX]</span> Table names and columns all upper cased (for new installs)<br />
+                    <span class="code">[FIX]</span> many other minor discrepancies that I forgot
+                </td>
+            </tr>
+            <tr>
+                <td class="cheading">2.0 Codename Production Ready</td>
+            </tr>
+            <tr>
+                <td>
+                    Admin Section and Form Display UIs overhauled<br />
+                    AJAX and other javascript ironed out<br />
+                    Forms are more accessible, utilising &lt;label&gt;s for each form element<br />
+                    Admin menu replaced with inline icons<br /><br />
+
+                    <span class="code">[NEW]</span> Ability to make forms (in)active including an "inactive form" message<br />
+                    <span class="code">[NEW]</span> Added security image on/off<br />
+                    <span class="code">[NEW]</span> Check Boxes and Radio Buttons have a "width" setting to control how many columns used before wrapping<br />
+                    <span class="code">[FIX]</span> On/Off in module manager now reflected in forms display page<br />
+                    <span class="code">[FIX]</span> Check boxes form type works like radio buttons<br />
+                    <span class="code">[FIX]</span> Error handling for the Admin section and Form display page redone<br />
+                </td>
+            </tr>
+            <tr>
+                <td class="cheading">1.0</td>
+            </tr>
+            <tr>
+                <td>Initial Release, no changelog available</td>
+            </tr>
+        </table>
+
+	
+    </body>
+</html>
