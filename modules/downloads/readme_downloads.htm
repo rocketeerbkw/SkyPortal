@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>Readme - Downloads Module</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body>
+<div style="padding:5px;background-color:#0033CC;">
+  <h2><font color="#FFFFFF">SkyPortal Downloads Module v1.0</font></h2>
+</div>
+<font color="#FF0000"><b>The SkyPortal &quot;CORE&quot; 
+must already be installed before installing this module.</b></font><br />
+<br />
+<B>16 files are contained in this zip</B> 
+<ol>
+  <li>Lang/en/downloads_lang.asp</li>
+  <li>Modules/downloads/dl_admin.asp</li>
+  <li>Modules/downloads/dl_config.asp</li>
+  <li>Modules/downloads/dl_custom.asp</li>
+  <li>Modules/downloads/dl_functions.asp</li>
+  <li>Modules/downloads/fp_dl.asp</li>
+  <li>admin_dl_admin.asp</li>
+  <li>createDownloads.asp</li>
+  <li>dl.asp</li>
+  <li>dl_add_form.asp</li>
+  <li>dl_add_url.asp</li>
+  <li>dl_edit_url.asp</li>
+  <li>dl_pop.asp</li>
+  <li>dl_sync.asp</li>
+  <li>license_downloads.txt</li>
+  <li>readme_downloads.htm (this file)</li>
+</ol>
+<div style="padding:5px;background-color:#0033CC;">
+  <h3><font color="#FFFFFF">New Installation</font></h3>
+</div>
+<p><b>There are 6 steps to installing this module.</b><br />
+  1. Install the 'core' of the portal first.<br />
+  2. Unzip the contents into the root of your site.<br />
+  3. Upload all the files and folders to your web folder<br />
+  4. Add the include file to <b>fp_custom.asp</b> in your site root as outlined 
+  below.<br />
+  5. Run the <b>createDownloads.asp</b> file to create the db tables and insert 
+  the default data<br />
+  6. Delete the <b>createDownloads.asp</b> file from your server.</p>
+<p><b>Open the fp_custom.asp file in your favorite editor</b>.<br />
+  Around line 21 you will see this...<br />
+  <b><font color="#0033CC">&lt;!--include file=&quot;modules/downloads/fp_dl.asp&quot;--&gt;</font></b><br />
+  change that line to this... or add this line if it isnt already there<br />
+  <font color="#0033CC"><b>&lt;!--<font color="#FF0000">#</font>include file=&quot;modules/downloads/fp_dl.asp.asp&quot;--&gt;</b></font><br />
+  Save and upload. </p>
+<div style="padding:5px;background-color:#0033CC;"> 
+  <h3><font color="#FFFFFF">Upgrading existing installation</font></h3>
+</div>
+<p><b>There are 6 steps to Upgrading this module.</b><br />
+  1. BACK UP YOUR CURRENT DATABASE FIRST!<br>
+  2. BACK UP YOUR FILES/DOWNLOADS/ FOLDER!<br />
+  3. Unzip the contents into the root of your site.<br />
+  4. Upload all the files and folders to your web folder.<br />
+  5. Run the <b>createDownloads.asp</b> file to upgrade your existing installation.<br />
+  6. Delete the <b>createDownloads.asp</b> file from your server.</p>
+<div style="padding:5px;background-color:#0033CC;"> 
+  <h3><font color="#FFFFFF">Notes</font></h3>
+</div>
+You can add the items to your front page through your 
+<b>admin &gt;&gt; managers &gt;&gt; layout manager</b><br />
+The <b>Modules/downloads/fp_dl.asp</b> file controls 
+what appears as the &quot;side items&quot; in the download 
+module pages. <br />
+<br />
+<br />
+</body>
+</html>

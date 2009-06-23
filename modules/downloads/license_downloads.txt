@@ -1,0 +1,188 @@
+-------------------------------------
+SkyPortal End-User License Agreement
+-------------------------------------
+
+Last modified: January 8, 2006
+Copyright 2005-2006 Dogg Software - all rights reserved.
+
+----------------------------------------------------
+
+THIS AGREEMENT PERTAINS TO CODE DISTRIBUTED WITH SKYPORTAL
+INTERNET PORTAL SOFTWARE VERSION 1.0 ("software") WRITTEN
+BY DOGG SOFTWARE. THIS DISTRIBUTION INCLUDES COMPONENTS THAT
+ARE WRITTEN AND LICENSED TO YOU BY THIRD PARTY ENTITIES.
+
+THE SKYPORTAL SOFTWARE DISTRIBUTION INCLUDES THE TINYMCE
+JAVASCRIPT CONTENT EDITOR PUBLISHED BY MOXIECODE SYSTEMS AB.
+TINYMCE IS LICENSED UNDER THE GNU LIBRARY GENERAL PUBLIC
+LICENSE. PLEASE SEE THE FULL LICENSE TERMS FOR TINYMCE BY
+VIEWING THE LICENSE.TXT FILE LOCATED IN THE TINYMCE FOLDER
+INSIDE YOUR PORTAL ROOT. 
+
+There are several external pieces of code incorporated into
+SkyPortal's code. Some of them have Limits to the way they
+could be used. We want to make sure that everyone understand
+these limitations as well the conditions under which they
+could be used.
+
+   1. TinyMCE: This is the HTML Rich Text editor used within
+      SkyPortal. This editor is released and is Licensed
+      under the terms of the GNU Lesser General Public
+      License to you from MoxieCode Systems AB. There are no
+      limitation or conditions other then what is listed in
+      the LGPL. If you want to to learn more about TinyMCE
+      you can visit MoxieCode's website at
+      http://tinymce.moxiecode.com.
+
+   2. SkyPortal Themes, Language Packs, Modules, and other
+      Components: Dogg Software wants to make sure these
+      users get the proper recognition as without them
+      SkyPortal would not have the same library of themes
+      and modules as it does. Themes and other modules
+      are published by their individual authors and come
+      with their own, separate licensing agreement which
+      you must abide by. If a module is published by
+      Dogg Software and does not come with its own, more
+      specific license agreement, it is licensed under
+      this master SkyPortal EULA. 
+
+   3. SkyPortal: SkyPortal is an open source application,
+      and you can use it in any format you wish as long
+      as you comply with the above and the accompanying
+      license below. You may not sell, resell, or
+      redistribute this software without getting explicit
+      written permission from the copyright holder.
+
+---------------------------------------------------------
+
+This license grants you the right to install, view and run
+one or multiple instances of this and other programs from 
+SkyPortal for both private and commercial uses.
+
+You may modify source code (at your own risk), but the 
+software (altered or otherwise) may not be distributed
+to entities beyond the license holder without the explicit
+written permission of the copyright holder.
+
+You may use parts of this program including source code
+and images in your own private work, but you may NOT
+redistribute, repackage, sublicense, or sell the
+whole or any part of this program even if it is modified
+or reverse engineered in whole or in part without 
+the explicit written permission of the copyright holder. 
+
+Copyright notices must be transferred to any file that
+any source code from this program in whole or in part
+used within.
+
+It is forbidden to repackage in full or any part of this
+software including source code and images as your own
+work and redistribute for profit or for free without the
+explicit written permission of the copyright holder.
+
+You may not pass off the whole or any part of this
+software as your own work.
+
+Any attempt otherwise to copy, modify, sublicense,
+or distribute any part of this work is void, and
+will automatically terminate your rights under this
+License and you must immediately remove and delete
+all copies of the SkyPortal software.
+
+You may not make imitations of this or other works from
+SkyPortal or associates, imply, or make it look like any
+of your own work is endorsed or supported by SkyPortal,
+and/or the copyright holders of this work and it's
+associates. 
+
+You may not deactivate, change, remove, all or any hyper
+links or links to SkyPortal, and the SkyPortal 'powered by'
+link's and text. All must remain visible when the
+pages are viewed unless you first obtain explicit written
+permission from the SkyPortal copyright holder.
+
+If this program requires a key code to remove the 'powered
+by' link's and text to SkyPortal you can not use a
+key code unless obtained legally from SkyPortal.
+The program may not be changed or modified in any way,
+shape, or form to bypass the key code to remove the
+powered by link's, text or images.
+
+Permission can be obtained from SkyPortal to remove the
+powered by link's text or, images by first contacting the
+copyright holder and then making a donation to SkyPortal
+to help support the development and update of this and
+future software.
+
+You will keep all copyright notices intact, including the
+notices embedded in all parts of the software.
+
+The license holder is the legal owner of the magnetic
+medium on which the software is recorded. However, the
+software itself is not sold, the copyright holder retains
+the property rights on the software itself, whichever
+medium is used to store it upon and at any moment in time 
+ie: original disks, plus any and all copies of the same
+which may have been produced subsequently.
+
+Material from SkyPortal including programs, applications,
+tutorials, scripts, may not be used for anything that
+would represent or is associated with an Intellectual 
+Property Violation, including, but not limited to,
+engaging in any activity that infringes or misappropriates
+the intellectual property rights of others, including
+copyrights, trademarks, service marks, trade secrets,
+software piracy, and patents held by individuals,
+corporations, or other entities. 
+
+You are not required to accept this License, since you
+have not signed it. However, nothing else grants you
+permission to install, run, use, view, modify, the Program 
+or its derivative works. These actions are prohibited by
+law if you do not accept this License and you must
+immediately remove and delete all copies of the SkyPortal
+software. Therefore, by installing, using, viewing,
+modifying the Program (or any work based on the Program),
+you indicate your acceptance of this License to do so,
+and all its terms and conditions for using, copying, or
+modifying the Program or works based on it.
+
+Any disagreement which may arise between the parties with
+regard to the interpretation and/or execution of the present
+contract shall by default come under the jurisdiction of 
+the United States Courts.
+
+NO WARRANTY
+-----------
+THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT
+PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED
+IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES
+PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY OF ANY KIND,
+EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND
+PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM
+PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY
+SERVICING, REPAIR OR CORRECTION.
+
+IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO
+IN WRITING WILL ANY COPYRIGHT HOLDER, BE LIABLE TO YOU FOR
+DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR
+CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY
+TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF
+DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED
+BY YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO
+OPERATE WITH ANY OTHER PROGRAMS), EVEN IF SUCH HOLDER OR
+OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH
+DAMAGES.
+
+If any terms are violated, SkyPortal reserves the right to
+revoke the license at any time. 
+No refunds will be granted for revoked licenses.
+
+SkyPortal reserves the right to modify these terms at any
+time without prior notice. 
+
+This license is governed by the laws of the
+United States - State of Indiana.
+
