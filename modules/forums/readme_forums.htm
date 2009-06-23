@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>Readme - Forums Module</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body>
+<B> 
+<h2><FONT color="#0000FF">SkyPortal Forums Module 
+  v0.8 </FONT></h2>
+<font color="#FF0000">The SkyPortal &quot;CORE&quot; 
+must already be installed before installing this module.</font></B><br />
+<br />
+
+<B>26 files are contained in this zip </B>
+<ol> 
+  <li>admin_delete_topics.asp</li>
+  <li>admin_forums.asp</li>
+  <li>createForums.asp</li>
+  <li>fhome.asp</li>
+  <li>fnews.asp</li>
+  <li>forum.asp</li>
+  <li>forum_active_topics.asp</li>
+  <li>forum_archive.asp</li>
+  <li>forum_archive_display.asp</li>
+  <li>forum_faq.asp</li>
+  <li>forum_faq_moderator.asp</li>
+  <li>forum_pop.asp</li>
+  <li>forum_pop_delete.asp</li>
+  <li>forum_pop_lock.asp</li>
+  <li>forum_pop_open.asp</li>
+  <li>forum_post.asp</li>
+  <li>forum_post_info.asp</li>
+  <li>forum_report_post.asp</li>
+  <li>forum_report_post_moderate.asp</li>
+  <li>forum_search.asp</li>
+  <li>forum_topic.asp</li>
+  <li>link.asp</li>
+  <li>readme_forums.htm (this file)</li>
+  <li>Modules/forums/forum_functions.asp</li>
+  <li>Modules/forums/fp_forums.asp</li>
+  <li>Modules/forums/inc_jump_to.asp</li>
+</ol>
+<div style="padding:5px;background-color:#0033CC;">
+  <h3><font color="#FFFFFF">Installation</font></h3>
+</div>
+<p><b>There are 6 steps to installing this module.</b><br />
+  1. Install the 'core' of the portal first.<br />
+  2. Unzip the contents into the root of your site.<br />
+  3. Upload all the files and folders to your web folder<br />
+  4. Run the <b>createForums.asp</b> file to create 
+  the db tables and insert the default data<br />
+  5. Add the include file to <b>fp_custom.asp</b> in 
+  your site root as outlined below.<br />
+  6. Delete the <b>createForums.asp</b> file from 
+  your server.</p>
+<p><b>Open the fp_custom.asp file in your favorite editor</b>.<br />
+  Around line 20 you will see this...<br />
+  <b><font color="#0033CC">&lt;!--include file=&quot;modules/forums/fp_forums.asp&quot;--&gt;</font></b><br />
+  change that line to this...<br />
+  <font color="#0033CC"><b>&lt;!--<font color="#FF0000">#</font>include 
+  file=&quot;modules/forums/fp_forums.asp&quot;--&gt;</b></font><br />
+  Save and upload. </p>
+<div style="padding:5px;background-color:#0033CC;"> 
+  <h3><font color="#FFFFFF">Notes</font></h3>
+</div>
+You can add the items to your front page through your 
+<b>admin &gt;&gt; managers &gt;&gt; layout manager</b><br />
+<br />
+<br />
+</body>
+</html>
