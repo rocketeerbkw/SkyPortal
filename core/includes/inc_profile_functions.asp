@@ -555,9 +555,11 @@ sub editProfile()
 		strSql = "UPDATE " & strMemberTablePrefix & "MEMBERS "
 		if trim(Request.Form("Password")) = "" then
 			strSql = strSql & " SET M_COUNTRY  = '" & ChkString(Request.Form("Country"),"sqlstring")  & " ', "
+			bPasswordChanged = False
 		else
 			strSql = strSql & " SET M_PASSWORD = '" & pEncrypt(pEnPrefix & ChkString(Request.Form("Password"),"sqlstring")) & "', "
 			strSql = strSql & " M_COUNTRY  = '" & ChkString(Request.Form("Country"),"sqlstring")  & " ', "
+			bPasswordChanged = True
 		end if
 		strSql = strSql & " M_RECMAIL  = '" & ChkString(Request.Form("RECMAIL"),"sqlstring")  & "', "
 			
@@ -641,7 +643,9 @@ sub editProfile()
 		'end IF
 		'response.Write(strSql & "<br />")			
 		executeThis(strsql)
-		Session(strUniqueID & "userID") = ""
+		if bPasswordChanged then
+			deleteCookie("User")
+		end if
 		
 		regHomepage = ""
 			
